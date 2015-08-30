@@ -11,9 +11,10 @@ public class SomeOtherClass {
     public void doSomething() {
         outer = new OuterClass();
 
-        // this won't work; only static classes can be instantiated without an instance of the
+        // inner classes can't be instantiated without an instance of the
         // enclosing class
-        //inner = new OuterClass.InnerClass();
+        inner = outer.new InnerClass(); // so weird
+        inner = new OuterClass().new InnerClass(); // also works.  weeeeird.
 
         // static classes are more independent of the enclosing class, and so they can be
         // instantiated without an instance of the enclosing class
