@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Lecture04</string>
+    <string name="app_name">Rabbit Hole</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="dynamic_string">Hard coded strings are bad!</string>
+    <string name="label_eat_me">Eat Me!</string>
+    <string name="label_drink_me">Drink Me!</string>
 </resources>

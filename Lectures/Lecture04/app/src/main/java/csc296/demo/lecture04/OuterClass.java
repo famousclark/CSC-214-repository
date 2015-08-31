@@ -1,5 +1,7 @@
 package csc296.demo.lecture04;
 
+import android.widget.Button;
+
 /**
  * Created by usx13992 on 8/27/2015.
  */
@@ -29,6 +31,10 @@ public class OuterClass {
             // to refer to the enclosing class's version of the method, the class name prefix
             // is required
             String s2 = OuterClass.this.toString();
+        }
+
+        public void doSomething(Button button) {
+            button.setText(R.string.dynamic_string);
         }
     }
 
