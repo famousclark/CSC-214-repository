@@ -2,6 +2,9 @@
     <string name="app_name">Rabbit Hole</string>
 
     <string name="dynamic_string">Hard coded strings are bad!</string>
-    <string name="label_eat_me">Eat Me!</string>
-    <string name="label_drink_me">Drink Me!</string>
+    <string name="label_choose">Choose One</string>
+    <string name="label_eat_me">Eat Me</string>
+    <string name="label_drink_me">Drink Me</string>
+    <string name="message_bigger">You got bigger!</string>
+    <string name="message_smaller">You got smaller!</string>
 </resources>
