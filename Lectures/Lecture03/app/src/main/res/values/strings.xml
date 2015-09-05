@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Lecture03</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Stumper!</string>
+    <string name="label_stumper">Are there hats?</string>
+    <string name="label_yes">Yes</string>
+    <string name="label_no">No</string>
     <string name="action_settings">Settings</string>
 </resources>
