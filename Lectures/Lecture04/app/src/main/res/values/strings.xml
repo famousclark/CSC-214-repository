@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Rabbit Hole</string>
+    <string name="app_name">Down the Rabbit Hole</string>
 
     <string name="dynamic_string">Hard coded strings are bad!</string>
     <string name="label_choose">Choose One</string>

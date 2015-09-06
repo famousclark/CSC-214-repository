@@ -25,6 +25,7 @@ public class RabbitHoleActivity extends Activity {
             }
         });
 
+        mButtonDrinkMe = (Button)findViewById(R.id.button_drink_me);
         mButtonDrinkMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
