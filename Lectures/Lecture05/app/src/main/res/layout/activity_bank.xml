@@ -126,21 +126,20 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/button_previous"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/action_previous"
-            android:text="@string/label_previous"/>
+            android:src="@drawable/action_previous"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/button_next"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableRight="@drawable/action_next"
-            android:text="@string/label_next"
+            android:src="@drawable/action_next"
             />
 
     </LinearLayout>

@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -21,8 +22,8 @@ public class BankActivity extends Activity {
     private TextView mTextViewTransaction02;
     private TextView mTextViewTransaction03;
     private TextView mTextViewTransaction04;
-    private Button mButtonPrevious;
-    private Button mButtonNext;
+    private ImageButton mButtonPrevious;
+    private ImageButton mButtonNext;
 
     private Customer mCustomer;
     private int mAccountIndex;
@@ -48,7 +49,7 @@ public class BankActivity extends Activity {
         mTextViewTransaction03 = (TextView)findViewById(R.id.text_view_transaction03);
         mTextViewTransaction04 = (TextView)findViewById(R.id.text_view_transaction04);
 
-        mButtonPrevious = (Button)findViewById(R.id.button_previous);
+        mButtonPrevious = (ImageButton)findViewById(R.id.button_previous);
         mButtonPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +62,7 @@ public class BankActivity extends Activity {
         });
 
 
-        mButtonNext = (Button)findViewById(R.id.button_next);
+        mButtonNext = (ImageButton)findViewById(R.id.button_next);
         mButtonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +93,7 @@ public class BankActivity extends Activity {
         }
         mTextViewAccountType.setText(type);
         mTextViewAccountNumber.setText(Integer.toString(account.getAccountNumber()));
-        mTextViewAccountBalance.setText(Double.toString(account.getBalance()));
+        mTextViewAccountBalance.setText(String.format("%.2f", account.getBalance()));
         List<Transaction> transactions = account.getTransactionList();
         updateTransactionTextView(mTextViewTransaction01, transactions.get(0));
         updateTransactionTextView(mTextViewTransaction02, transactions.get(1));
@@ -102,7 +103,7 @@ public class BankActivity extends Activity {
 
     private void updateTransactionTextView(TextView textView, Transaction transaction) {
         String label = DateFormat.getDateTimeInstance().format(transaction.getDate()) + " " +
-                transaction.getDescription() + " " + transaction.getAmount();
+                transaction.getDescription() + " " + String.format("%.2f", transaction.getAmount());
         textView.setText(label);
     }
 
