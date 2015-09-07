@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">LoggingLife</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_bank">Your Bank</string>
+    <string name="label_previous">Previous</string>
+    <string name="label_next">Next</string>
+    <string name="label_customer_name">Customer Name</string>
+    <string name="label_bank_account">Bank Account</string>
+    <string name="label_balance">Balance</string>
+    <string name="label_transactions">Transactions</string>
+    <string name="label_transaction_history">Transaction History</string>
 </resources>

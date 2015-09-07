@@ -19,4 +19,18 @@ public class ExceptionExample {
             Log.e(TAG, "Nasty Exception handled!", e);
         }
     }
+
+    public void rethrowException() throws NastyException {
+        doSomething();
+    }
+
+    public void logAndRethrowException() throws NastyException {
+        try {
+            doSomething();
+        }
+        catch(NastyException e) {
+            Log.e(TAG, "Nasty Exception rethrown!", e);
+            throw e;
+        }
+    }
 }
