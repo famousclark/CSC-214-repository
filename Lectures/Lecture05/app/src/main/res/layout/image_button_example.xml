@@ -19,6 +19,7 @@
         />
 
     <LinearLayout
+        android:id="@+id/next_and_previous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/image_button_woof"
@@ -37,5 +38,14 @@
             android:src="@drawable/right"/>
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/next_and_previous"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@mipmap/woof_launcher"
+        android:text="Button With Image"
+        />
 
 </RelativeLayout>
