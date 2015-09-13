@@ -77,6 +77,8 @@ public class BankActivity extends Activity {
         updateBankAccount();
     }
 
+
+
     private void updateBankAccount() {
         BankAccount account = mCustomer.getBankAccountList().get(mAccountIndex);
         String type;
