@@ -10,7 +10,7 @@ import android.widget.CheckBox;
 
 public class ChangeFontActivity extends Activity {
 
-    private static final String TAG = "ChangeFont";
+    private static final String TAG = "HelloFont";
 
     private CheckBox mBoldCheckBox;
     private CheckBox mItalicCheckBox;
