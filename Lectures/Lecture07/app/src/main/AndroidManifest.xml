@@ -4,12 +4,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".HelloFont"
-            android:label="@string/app_name" >
+            android:name=".HelloFontActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +19,8 @@
         </activity>
         <activity
             android:name=".ChangeFontActivity"
-            android:label="@string/title_activity_change_font" >
+            android:label="@string/title_activity_change_font"
+            android:screenOrientation="landscape">
         </activity>
     </application>
 

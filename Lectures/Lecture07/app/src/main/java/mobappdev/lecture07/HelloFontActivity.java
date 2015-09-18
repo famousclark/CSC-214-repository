@@ -6,16 +6,17 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class HelloFont extends Activity {
+public class HelloFontActivity extends Activity {
     static final String KEY_BOLD = "mobappdev.lecture07.BOLD";
     static final String KEY_ITALIC = "mobappdev.lecture07.ITALIC";
     static final String KEY_UNDERLINED = "mobappdev.lecture07.UNDERLINED";
+
+    private static final String TAG = "HelloFont";
 
     private static final int RC_FONT = 2;
 
@@ -25,6 +26,7 @@ public class HelloFont extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate() called");
         setContentView(R.layout.activity_hello_font);
 
         mHelloWorldTextView = (TextView)findViewById(R.id.text_view_hello_world);
@@ -32,7 +34,7 @@ public class HelloFont extends Activity {
         changeFont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HelloFont.this, ChangeFontActivity.class);
+                Intent intent = new Intent(HelloFontActivity.this, ChangeFontActivity.class);
 
                 Typeface typeface = mHelloWorldTextView.getTypeface();
                 intent.putExtra(KEY_BOLD, typeface.isBold());
@@ -55,6 +57,12 @@ public class HelloFont extends Activity {
             updateFont(bold, italic, underlined);
         }
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy() called");
     }
 
     private void updateFont(boolean bold, boolean italic, boolean underlined) {
