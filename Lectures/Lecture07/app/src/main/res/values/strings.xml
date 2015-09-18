@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Hello Font</string>
-
     <string name="label_hello_world">Hello, World!</string>
     <string name="label_change_font">Change Font</string>
-    <string name="title_activity_change_font">Change FontA</string>
+    <string name="title_activity_change_font">Change Font</string>
+    <string name="label_bold">Bold</string>
+    <string name="label_italic">Italic</string>
+    <string name="label_underlined">Underlined</string>
 </resources>
