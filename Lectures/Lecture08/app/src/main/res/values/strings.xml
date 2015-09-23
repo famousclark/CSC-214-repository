@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Lecture08</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="label_second">Second</string>
+    <string name="label_first">First</string>
+    <string name="label_first_fragment">First Fragment</string>
+    <string name="label_second_fragment">Second Fragment</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_layout_fragment">Layout Fragment</string>
 </resources>
