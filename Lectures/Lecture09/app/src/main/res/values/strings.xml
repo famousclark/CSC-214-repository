@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lecture09</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="label_change_message">Change Message</string>
+    <string name="title_activity_change_message">ChangeMessageActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="label_enter_message">Enter the new message...</string>
+</resources>
