@@ -21,7 +21,7 @@ public class ChangeMessageActivity extends Activity
     }
 
     @Override
-    public void messageChanged(String message) {
+    public void messageChanged(CharSequence message) {
         Intent data = new Intent();
         data.putExtra(MainActivity.KEY_MESSAGE, message);
         setResult(RESULT_OK, data);

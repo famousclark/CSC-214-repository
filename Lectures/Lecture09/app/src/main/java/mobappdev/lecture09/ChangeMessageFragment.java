@@ -17,7 +17,7 @@ import android.widget.EditText;
 public class ChangeMessageFragment extends LoggingFragment {
 
     public interface MessageChangeListener {
-        public void messageChanged(String message);
+        public void messageChanged(CharSequence message);
         public void messageCanceled();
     }
 
@@ -46,7 +46,7 @@ public class ChangeMessageFragment extends LoggingFragment {
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mMessageChangeListener.messageChanged(editTextMessage.getText().toString());
+                mMessageChangeListener.messageChanged(editTextMessage.getText());
             }
         });
 
