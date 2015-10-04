@@ -1,9 +1,11 @@
 package mobappdev.lecture09;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,11 +34,25 @@ public class ChangeMessageFragment extends LoggingFragment {
         super.onAttach(context);
 
         mMessageChangeListener = (MessageChangeListener)context;
+
+        Log.d(TAG, "onAttach(Context) called with: " + context);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        mMessageChangeListener = (MessageChangeListener)activity;
+
+        Log.d(TAG, "onAttach(ACTIVITY) called with: " + activity);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.d(TAG, "onCreateView() called with: " + mMessageChangeListener);
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_change_message, container, false);
 

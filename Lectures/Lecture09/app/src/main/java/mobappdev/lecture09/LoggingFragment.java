@@ -14,7 +14,7 @@ import android.view.ViewGroup;
  * A simple {@link Fragment} subclass.
  */
 public class LoggingFragment extends Fragment {
-    private final String TAG = getClass().getName();
+    protected final String TAG = getClass().getName();
 
     public LoggingFragment() {
         // Required empty public constructor
