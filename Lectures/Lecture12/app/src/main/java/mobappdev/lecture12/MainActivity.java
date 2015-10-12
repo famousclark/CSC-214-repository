@@ -7,6 +7,7 @@ import android.view.View;
 
 import mobappdev.lecture12.customlistview.CustomListViewActivity;
 import mobappdev.lecture12.listview.ListViewActivity;
+import mobappdev.lecture12.recyclerview.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,5 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startRecyclerViewActivity(View view) {
+        Intent intent = new Intent(this, RecyclerViewActivity.class);
+        startActivity(intent);
     }
 }

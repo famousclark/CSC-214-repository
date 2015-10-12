@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".customlistview.CustomListViewActivity" >
         </activity>
+        <activity android:name=".recyclerview.RecyclerViewActivity" >
+        </activity>
     </application>
 
 </manifest>
