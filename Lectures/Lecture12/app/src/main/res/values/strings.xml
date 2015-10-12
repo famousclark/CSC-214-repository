@@ -4,4 +4,9 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_comic_collection">Comic Collection</string>
+    <string name="label_list_view_custom">List View (Custom)</string>
+    <string name="labal_list_view_vanilla">List View (Vanilla)</string>
+    <string name="label_volume">Vol:</string>
+    <string name="label_owned">Owned</string>
+    <string name="label_number">#</string>
 </resources>

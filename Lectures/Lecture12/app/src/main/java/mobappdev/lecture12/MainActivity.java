@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import mobappdev.lecture12.customlistview.CustomListViewActivity;
 import mobappdev.lecture12.listview.ListViewActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void startListViewActivity(View view) {
         Intent intent = new Intent(this, ListViewActivity.class);
+        startActivity(intent);
+    }
+
+    public void startCustomListViewActivity(View view) {
+        Intent intent = new Intent(this, CustomListViewActivity.class);
         startActivity(intent);
     }
 

@@ -17,11 +17,19 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button_list_view"
+            android:id="@+id/button_list_view_vanilla"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="List View"
+            android:text="@string/labal_list_view_vanilla"
             android:onClick="startListViewActivity"
+            />
+
+        <Button
+            android:id="@+id/button_list_view_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_list_view_custom"
+            android:onClick="startCustomListViewActivity"
             />
 
         <Button
