@@ -42,6 +42,10 @@ public class Comic {
         return mId;
     }
 
+    public String getNote() {
+        return mNote;
+    }
+
     @Override
     public String toString() {
         return getSeries() + " vol. " + getVolume() + ", #" + getNumber();
