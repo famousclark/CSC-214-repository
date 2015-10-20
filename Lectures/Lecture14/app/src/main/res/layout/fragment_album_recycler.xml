@@ -1,0 +1,10 @@
+<android.support.v7.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycler_view_albums"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mobappdev.homework06.recycler.AlbumRecyclerFragment"
+    android:background="#FFFFAA">
+
+</android.support.v7.widget.RecyclerView>
