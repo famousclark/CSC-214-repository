@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Lecture14</string>
+    <string name="title_album_dialog">You Tapped an Album!</string>
+    <string name="title_activity_album_list">AlbumListActivity</string>
 </resources>

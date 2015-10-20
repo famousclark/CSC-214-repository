@@ -9,8 +9,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import mobappdev.homework06.R;
-import mobappdev.homework06.model.Album;
+import mobappdev.lecture14.R;
+import mobappdev.lecture14.model.Album;
+
 
 /**
  * Created by Bobby on 10/18/2015.
