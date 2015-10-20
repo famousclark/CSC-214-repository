@@ -2,10 +2,14 @@ package mobappdev.lecture14.listview;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -14,9 +18,12 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import mobappdev.lecture14.MainActivity;
+import mobappdev.lecture14.R;
 import mobappdev.lecture14.dialog.AlbumDialog;
 import mobappdev.lecture14.model.Album;
 import mobappdev.lecture14.model.Collection;
+import mobappdev.lecture14.recycler.AlbumRecyclerActivity;
 
 
 /**
@@ -33,6 +40,7 @@ public class AlbumListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
 
         mAlbums = Collection.get().getAlbums();
 
@@ -49,6 +57,30 @@ public class AlbumListFragment extends ListFragment {
         // this causes an illegal state exception: content view not yet created
         //getListView().setOnItemClickListener(new ItemClickListener());
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_album_list_fragment, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean handled;
+        switch(item.getItemId()) {
+            case R.id.menu_main_activity:
+                startActivity(new Intent(getActivity(), MainActivity.class));
+                handled = true;
+                break;
+            case R.id.menu_recycler_view:
+                startActivity(new Intent(getActivity(), AlbumRecyclerActivity.class));
+                handled = true;
+            default:
+                handled = super.onOptionsItemSelected(item);
+                break;
+        }
+
+        return handled;
     }
 
     @Override

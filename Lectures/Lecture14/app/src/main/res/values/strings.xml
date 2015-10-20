@@ -4,4 +4,6 @@
     <string name="title_activity_album_list">AlbumListActivity</string>
     <string name="menu_list_view">List View</string>
     <string name="menu_recycler_view">Recycler View</string>
+    <string name="label_instructions">Select the LV menu option to see the ListView example, and the RV menu option to see the RecyclerView example!</string>
+    <string name="title_return_to_main">Return to Main</string>
 </resources>
