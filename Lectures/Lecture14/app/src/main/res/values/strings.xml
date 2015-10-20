@@ -2,4 +2,6 @@
     <string name="app_name">Lecture14</string>
     <string name="title_album_dialog">You Tapped an Album!</string>
     <string name="title_activity_album_list">AlbumListActivity</string>
+    <string name="menu_list_view">List View</string>
+    <string name="menu_recycler_view">Recycler View</string>
 </resources>

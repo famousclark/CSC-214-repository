@@ -47,7 +47,7 @@ public class AlbumListFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
         // this causes an illegal state exception: content view not yet created
-        getListView().setOnItemClickListener(new ItemClickListener());
+        //getListView().setOnItemClickListener(new ItemClickListener());
         return view;
     }
 
