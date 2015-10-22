@@ -15,10 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".listview.AlbumListActivity" >
+        <activity android:name=".listview.AlbumListActivity"
+            android:parentActivityName=".MainActivity">
 
         </activity>
-        <activity android:name=".recycler.AlbumRecyclerActivity" >
+        <activity android:name=".recycler.AlbumRecyclerActivity"
+            android:parentActivityName=".MainActivity">
 
         </activity>
     </application>

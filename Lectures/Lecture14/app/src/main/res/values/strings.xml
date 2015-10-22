@@ -10,4 +10,5 @@
     <string name="subtitle_list_view_version">ListView Version</string>
     <string name="subtitle_main_activity">Main Activity</string>
     <string name="subtitle_recycler_view_version">RecyclerView Version</string>
+    <string name="menu_hide_subtitle">Hide Subtitle</string>
 </resources>

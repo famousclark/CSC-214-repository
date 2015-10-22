@@ -1,6 +1,7 @@
 package mobappdev.lecture14;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,8 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setTitle(R.string.title_album_list);
-        getSupportActionBar().setSubtitle(getString(R.string.subtitle_main_activity));
+        // purposely leaving the default title here for exemplary purposes.  switching to an
+        // activity that sets the title and then back shows that changing the title in one
+        // activity doesn't affect other activities
+        ActionBar aBar = getSupportActionBar();
+        aBar.setSubtitle(getString(R.string.subtitle_main_activity));
     }
 
     @Override
