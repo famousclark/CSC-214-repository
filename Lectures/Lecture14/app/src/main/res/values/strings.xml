@@ -6,4 +6,8 @@
     <string name="menu_recycler_view">Recycler View</string>
     <string name="label_instructions">Select the LV menu option to see the ListView example, and the RV menu option to see the RecyclerView example!</string>
     <string name="title_return_to_main">Return to Main</string>
+    <string name="title_album_list">Album List</string>
+    <string name="subtitle_list_view_version">ListView Version</string>
+    <string name="subtitle_main_activity">Main Activity</string>
+    <string name="subtitle_recycler_view_version">RecyclerView Version</string>
 </resources>

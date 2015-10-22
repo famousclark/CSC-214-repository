@@ -69,11 +69,11 @@ public class AlbumListFragment extends ListFragment {
         boolean handled;
         switch(item.getItemId()) {
             case R.id.menu_main_activity:
-                startActivity(new Intent(getActivity(), MainActivity.class));
+                restartActivity(MainActivity.class);
                 handled = true;
                 break;
             case R.id.menu_recycler_view:
-                startActivity(new Intent(getActivity(), AlbumRecyclerActivity.class));
+                restartActivity(AlbumRecyclerActivity.class);
                 handled = true;
             default:
                 handled = super.onOptionsItemSelected(item);
@@ -112,5 +112,11 @@ public class AlbumListFragment extends ListFragment {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Toast.makeText(getContext(), "Item Clicked!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void restartActivity(Class activityClass) {
+        Intent intent = new Intent(getActivity(), activityClass);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
     }
 }

@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().setTitle(R.string.title_album_list);
+        getSupportActionBar().setSubtitle(getString(R.string.subtitle_main_activity));
     }
 
     @Override
@@ -29,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         boolean handled;
         switch(item.getItemId()) {
             case R.id.menu_list_view:
-                startAlbumListActivity();
+                restartActivity(AlbumListActivity.class);
                 handled = true;
                 break;
             case R.id.menu_recycler_view:
-                startAlbumRecyclerActivity();
+                restartActivity(AlbumRecyclerActivity.class);
                 handled = true;
                 break;
             default:
@@ -42,13 +45,9 @@ public class MainActivity extends AppCompatActivity {
         return handled;
     }
 
-    private void startAlbumListActivity() {
-        Intent intent = new Intent(this, AlbumListActivity.class);
-        startActivity(intent);
-    }
-
-    private void startAlbumRecyclerActivity() {
-        Intent intent = new Intent(this, AlbumRecyclerActivity.class);
+    private void restartActivity(Class activityClass) {
+        Intent intent = new Intent(this, activityClass);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 }

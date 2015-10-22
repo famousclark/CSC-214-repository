@@ -19,5 +19,7 @@ public class AlbumListActivity extends AppCompatActivity {
                 .replace(R.id.frame_layout_list_view, new AlbumListFragment())
                 .commit();
 
+        getSupportActionBar().setTitle(R.string.title_album_list);
+        getSupportActionBar().setSubtitle(R.string.subtitle_list_view_version);
     }
 }
