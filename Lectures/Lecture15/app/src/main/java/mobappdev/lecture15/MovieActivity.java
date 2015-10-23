@@ -22,11 +22,11 @@ public class MovieActivity extends AppCompatActivity
 
         Intent intent = getIntent();
         UUID id = (UUID)intent.getSerializableExtra(EXTRA_ID);
-        MovieFragment fragment = MovieFragment.newInstance(id);
 
+        NewMovieFragment fragment = NewMovieFragment.newInstance(id);
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction()
-                .add(R.id.frame_layout_movie, fragment, null)
+                .add(R.id.frame_layout_movie, fragment)
                 .commit();
 
         int rid = (id == null ? R.string.subtitle_new_movie : R.string.subtitle_edit_movie);
