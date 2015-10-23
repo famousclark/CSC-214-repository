@@ -17,6 +17,7 @@ public class Movie {
         this(UUID.randomUUID());
     }
 
+    // when reading movies out of the database, the ID will be passed in
     public Movie(UUID id) {
         mId = id;
     }

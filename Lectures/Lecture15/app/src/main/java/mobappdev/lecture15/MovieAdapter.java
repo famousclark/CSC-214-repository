@@ -40,7 +40,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     /**
      * This method is called whenever the set of movies changes.  This could mean that a movie
      * was added, removed, or updated.
-     * 
+     *
      * @param movies The current set of movies.
      */
     public void setMovies(List<Movie> movies) {

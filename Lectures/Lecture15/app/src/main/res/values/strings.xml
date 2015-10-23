@@ -1,6 +1,22 @@
 <resources>
-    <string name="app_name">Lecture15</string>
+    <string name="app_name">Movies!</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_movie_title">Movie Title</string>
+    <string name="hint_title">Title of Movie</string>
+    <string name="label_director">Directed By</string>
+    <string name="hint_director">Name of Director</string>
+    <string name="title_release_date">Release Date</string>
+    <string name="subtitle_movie_list">Movie List</string>
+    <string name="subtitle_new_movie">New Movie</string>
+    <string name="subtitle_edit_movie">Edit Movie</string>
+    <string-array name="genres_array">
+        <item>Action</item>
+        <item>Comedy</item>
+        <item>Drama</item>
+        <item>Fantasy</item>
+        <item>Horror</item>
+        <item>Romance</item>
+        <item>Science Fiction</item>
+    </string-array>
+
 </resources>
