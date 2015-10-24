@@ -34,6 +34,6 @@ public class MovieViewHolder extends RecyclerView.ViewHolder {
         mDirector.setText(movie.getDirector());
         mGenre.setText(movie.getGenre());
         mCalendar.setTime(movie.getReleaseDate());
-        mReleaseYear.setText(mCalendar.get(Calendar.YEAR));
+        mReleaseYear.setText(Integer.toString(mCalendar.get(Calendar.YEAR)));
     }
 }

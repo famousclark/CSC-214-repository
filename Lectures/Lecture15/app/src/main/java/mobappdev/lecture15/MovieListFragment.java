@@ -3,7 +3,9 @@ package mobappdev.lecture15;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ import mobappdev.lecture15.model.MovieCollection;
  * A simple {@link Fragment} subclass.
  */
 public class MovieListFragment extends Fragment {
+    private static final String TAG = "MovieListFragment";
     private MovieCollection mMovieCollection;
     private RecyclerView mRecyclerView;
     private MovieAdapter mAdapter;
@@ -34,6 +37,7 @@ public class MovieListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_movie_list, container, false);
 
         mRecyclerView = (RecyclerView)view.findViewById(R.id.recycler_view_movies);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         updateUI();
 
         return view;
@@ -41,6 +45,7 @@ public class MovieListFragment extends Fragment {
 
     public void updateUI() {
         List<Movie> movies = mMovieCollection.getMovies();
+        Log.d(TAG, movies.toString());
         if(mAdapter == null) {
             mAdapter = new MovieAdapter(movies);
             mRecyclerView.setAdapter(mAdapter);

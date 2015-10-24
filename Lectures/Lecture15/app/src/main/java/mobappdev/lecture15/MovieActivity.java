@@ -1,5 +1,6 @@
 package mobappdev.lecture15;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
@@ -9,11 +10,12 @@ import android.os.Bundle;
 import java.util.UUID;
 
 import mobappdev.lecture15.model.Movie;
+import mobappdev.lecture15.model.MovieCollection;
 
 public class MovieActivity extends AppCompatActivity
         implements MovieFragment.OnMovieChangedListener {
 
-    public static final String EXTRA_ID = "mobappdev.lecture15.moviefragment.id";
+    public static final String EXTRA_ID = "mobappdev.lecture15.movieactivity.id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,7 @@ public class MovieActivity extends AppCompatActivity
         Intent intent = getIntent();
         UUID id = (UUID)intent.getSerializableExtra(EXTRA_ID);
 
-        NewMovieFragment fragment = NewMovieFragment.newInstance(id);
+        MovieFragment fragment = MovieFragment.newInstance(id);
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction()
                 .add(R.id.frame_layout_movie, fragment)
@@ -40,7 +42,12 @@ public class MovieActivity extends AppCompatActivity
     }
 
     @Override
-    public void onMovieChanged(Movie movie) {
-        // todo: update or add movie to the database
+    public void onMovieChanged(int resultCode, Movie movie) {
+        if(resultCode == Activity.RESULT_OK) {
+            MovieCollection.get(this).addMovie(movie);
+        }
+
+        setResult(resultCode);
+        finish();
     }
 }

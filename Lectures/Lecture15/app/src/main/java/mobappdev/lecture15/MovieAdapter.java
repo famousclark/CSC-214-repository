@@ -1,6 +1,7 @@
 package mobappdev.lecture15;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import mobappdev.lecture15.model.Movie;
  * Created by USX13992 on 10/23/2015.
  */
 public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
+    private static final String TAG = "MovieAdapter";
     private List<Movie> mMovies;
 
     public MovieAdapter(List<Movie> movies) {
@@ -21,19 +23,22 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
 
     @Override
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Log.d(TAG, "onCreateViewHolder() called");
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.view_movie, parent);
+        View itemView = inflater.inflate(R.layout.view_movie, parent, false);
         return new MovieViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MovieViewHolder holder, int position) {
+        Log.d(TAG, "onBindViewHolder(holder," + position +") called");
         Movie movie = mMovies.get(position);
         holder.bind(movie);
     }
 
     @Override
     public int getItemCount() {
+        Log.d(TAG, "getItemCount() returning " + mMovies.size());
         return mMovies.size();
     }
 

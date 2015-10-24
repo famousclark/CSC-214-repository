@@ -9,6 +9,7 @@
     <string name="subtitle_movie_list">Movie List</string>
     <string name="subtitle_new_movie">New Movie</string>
     <string name="subtitle_edit_movie">Edit Movie</string>
+    <string name="genre_default">Action</string>
     <string-array name="genres_array">
         <item>Action</item>
         <item>Comedy</item>

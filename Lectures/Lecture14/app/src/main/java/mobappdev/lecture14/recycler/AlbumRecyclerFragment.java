@@ -17,7 +17,6 @@ import java.util.List;
 
 import mobappdev.lecture14.MainActivity;
 import mobappdev.lecture14.R;
-import mobappdev.lecture14.listview.AlbumListActivity;
 import mobappdev.lecture14.model.Album;
 import mobappdev.lecture14.model.Collection;
 

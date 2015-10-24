@@ -1,7 +1,11 @@
 package mobappdev.lecture15.model;
 
+import android.text.format.DateFormat;
+
 import java.util.Date;
 import java.util.UUID;
+
+import mobappdev.lecture15.R;
 
 /**
  * Created by USX13992 on 10/22/2015.
@@ -56,5 +60,14 @@ public class Movie {
 
     public void setReleaseDate(Date releaseDate) {
         mReleaseDate = releaseDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie[title=" + getTitle()
+                + ", director=" + getDirector()
+                + ", genre=" + getGenre()
+                + ", release date=" + getReleaseDate()
+                + "]";
     }
 }
