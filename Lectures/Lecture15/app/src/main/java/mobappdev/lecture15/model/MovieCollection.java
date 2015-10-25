@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -46,12 +47,15 @@ public class MovieCollection {
 
     public List<Movie> getMovies() {
         mMovies.clear();
+        mMoviesMap.clear();
         MovieCursorWrapper wrapper = queryMovies(null, null);
 
         try {
             wrapper.moveToFirst();
             while(wrapper.isAfterLast() == false) {
-                mMovies.add(wrapper.getMovie());
+                Movie movie = wrapper.getMovie();
+                mMovies.add(movie);
+                mMoviesMap.put(movie.getId(), movie);
                 wrapper.moveToNext();
             }
         }

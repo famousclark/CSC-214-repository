@@ -19,16 +19,13 @@ import java.util.Date;
 import java.util.UUID;
 
 import mobappdev.lecture15.model.Movie;
+import mobappdev.lecture15.model.MovieCollection;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MovieFragment extends Fragment {
-    public static interface OnMovieChangedListener {
-        public void onMovieChanged(int resultCode, Movie movie);
-    }
-
     private static final String KEY_ID = "ID";
 
     private EditText mTitle;
@@ -37,7 +34,7 @@ public class MovieFragment extends Fragment {
     private Button mReleaseDate;
     private Date mDate;
     private Movie mMovie;
-    private OnMovieChangedListener mCallback;
+    private String[] mGenres;
 
 
     public MovieFragment() {
@@ -54,20 +51,10 @@ public class MovieFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mCallback = (OnMovieChangedListener)context;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mCallback = null;
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        mGenres = getResources().getStringArray(R.array.genres_array);
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_movie, container, false);
 
@@ -84,13 +71,14 @@ public class MovieFragment extends Fragment {
         Bundle args = getArguments();
         UUID id = (UUID)args.getSerializable(KEY_ID);
         if(id != null) {
-
+            mMovie = MovieCollection.get(getContext()).getMovie(id);
         }
         else {
             mMovie = new Movie();
+            MovieCollection.get(getContext()).addMovie(mMovie);
         }
 
-        updateReleaseDateButtonLabel();
+        updateUserInterface();
 
         mReleaseDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,24 +89,17 @@ public class MovieFragment extends Fragment {
             }
         });
 
-        Button buttonOk = (Button)view.findViewById(R.id.button_ok);
-        buttonOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendResult(Activity.RESULT_OK);
-            }
-        });
-
-        Button buttonCancel = (Button)view.findViewById(R.id.button_cancel);
-        buttonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               sendResult(Activity.RESULT_CANCELED);
-            }
-        });
-
-
         return view;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mMovie.setTitle(mTitle.getText().toString());
+        mMovie.setDirector(mDirector.getText().toString());
+        mMovie.setGenre(mGenre.getSelectedItem().toString());
+        mMovie.setReleaseDate(mDate);
+        MovieCollection.get(getContext()).updateMovie(mMovie);
     }
 
     @Override
@@ -129,14 +110,20 @@ public class MovieFragment extends Fragment {
         }
     }
 
-    private void sendResult(int resultCode) {
-        if(mCallback != null ) {
-            mMovie.setTitle(mTitle.getText().toString());
-            mMovie.setDirector(mDirector.getText().toString());
-            mMovie.setGenre(mGenre.getSelectedItem().toString());
-            mMovie.setReleaseDate(mDate);
-            mCallback.onMovieChanged(resultCode, mMovie);
+    private void updateUserInterface() {
+        mTitle.setText(mMovie.getTitle());
+        mDirector.setText(mMovie.getDirector());
+        String genre = mMovie.getGenre();
+        int genreIndex = 0;
+        for(int i=1; genreIndex ==0 && i<mGenres.length; i++) {
+            if(mGenres[i].equals(genre)) {
+                genreIndex = i;
+            }
         }
+        mGenre.setSelection(genreIndex);
+        mDate = mMovie.getReleaseDate();
+        updateReleaseDateButtonLabel();
+
     }
 
     private void updateReleaseDateButtonLabel() {
@@ -146,6 +133,4 @@ public class MovieFragment extends Fragment {
         String formatted = DateFormat.getMediumDateFormat(getContext()).format(mDate);
         mReleaseDate.setText(formatted);
     }
-
-
 }

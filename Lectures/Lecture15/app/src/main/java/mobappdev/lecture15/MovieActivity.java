@@ -12,8 +12,7 @@ import java.util.UUID;
 import mobappdev.lecture15.model.Movie;
 import mobappdev.lecture15.model.MovieCollection;
 
-public class MovieActivity extends AppCompatActivity
-        implements MovieFragment.OnMovieChangedListener {
+public class MovieActivity extends AppCompatActivity {
 
     public static final String EXTRA_ID = "mobappdev.lecture15.movieactivity.id";
 
@@ -39,15 +38,5 @@ public class MovieActivity extends AppCompatActivity
         Intent intent = new Intent(context, MovieActivity.class);
         intent.putExtra(EXTRA_ID, id);
         return intent;
-    }
-
-    @Override
-    public void onMovieChanged(int resultCode, Movie movie) {
-        if(resultCode == Activity.RESULT_OK) {
-            MovieCollection.get(this).addMovie(movie);
-        }
-
-        setResult(resultCode);
-        finish();
     }
 }

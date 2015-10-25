@@ -57,25 +57,4 @@
         android:layout_below="@id/spinner_genres"
         tools:hint="Date Picker"
         />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            android:id="@+id/button_ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@android:string/ok"
-            />
-
-        <Button
-            android:id="@+id/button_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@android:string/cancel"/>
-
-    </LinearLayout>
 </RelativeLayout>

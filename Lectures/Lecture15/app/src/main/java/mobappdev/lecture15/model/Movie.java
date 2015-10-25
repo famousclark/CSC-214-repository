@@ -24,6 +24,7 @@ public class Movie {
     // when reading movies out of the database, the ID will be passed in
     public Movie(UUID id) {
         mId = id;
+        mReleaseDate = new Date();
     }
 
     public UUID getId() {
