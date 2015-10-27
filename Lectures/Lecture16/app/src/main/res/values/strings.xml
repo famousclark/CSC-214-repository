@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Lecture16</string>
+    <string name="label_browse">Browse</string>
+    <string name="hint_enter_url">Enter URL</string>
 </resources>
