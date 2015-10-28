@@ -13,4 +13,6 @@
     <string name="hint_contact_name">Contact Name</string>
     <string name="label_dial_phone">Dial The Phone</string>
     <string name="hint_enter_phone_number">Enter a Phone Number</string>
+    <string name="message_call_permission_granted">Call Permission Granted.</string>
+    <string name="message_call_permission_denied">Call Permissions Denied.</string>
 </resources>
