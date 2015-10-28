@@ -9,4 +9,8 @@
     <string name="title_activity_contacts">ContactsActivity</string>
     <string name="title_dial">Dial the Phone</string>
     <string name="label_take_photo">Take a Photo</string>
+    <string name="label_pick_a_contact">Pick a Contact</string>
+    <string name="hint_contact_name">Contact Name</string>
+    <string name="label_dial_phone">Dial The Phone</string>
+    <string name="hint_enter_phone_number">Enter a Phone Number</string>
 </resources>
