@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">Lecture16</string>
+    <string name="app_name">Implicit Intents</string>
     <string name="label_browse">Browse</string>
     <string name="hint_enter_url">Enter URL</string>
     <string name="text_choose">Choose a menu option...</string>
     <string name="title_browse_to">Browse To</string>
+    <string name="title_photo">Take a Photo</string>
+    <string name="title_contacts">Get a Contact</string>
+    <string name="title_activity_contacts">ContactsActivity</string>
+    <string name="title_dial">Dial the Phone</string>
+    <string name="label_take_photo">Take a Photo</string>
 </resources>

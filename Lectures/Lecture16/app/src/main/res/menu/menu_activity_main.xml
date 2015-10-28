@@ -7,4 +7,25 @@
         android:title="@string/title_browse_to"
         android:icon="@drawable/ic_browse_to"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_item_photo"
+        android:title="@string/title_photo"
+        android:icon="@drawable/ic_camera"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/menu_item_contacts"
+        android:title="@string/title_contacts"
+        android:icon="@drawable/ic_contacts"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/menu_item_phone"
+        android:title="@string/title_dial"
+        android:icon="@drawable/ic_phone"
+        app:showAsAction="ifRoom"
+        />
 </menu>

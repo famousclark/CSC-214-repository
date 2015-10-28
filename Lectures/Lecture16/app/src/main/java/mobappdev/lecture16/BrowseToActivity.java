@@ -31,7 +31,9 @@ public class BrowseToActivity extends AppCompatActivity {
         }
         Uri location = Uri.parse(uriString);
         Intent intent = new Intent(Intent.ACTION_VIEW, location);
-        intent.setType("text/html");
+        // docs say this should be supported, but causes app crash with "no
+        // activity found to handle intent.  go figure.
+        //intent.setType("text/html");
         startActivity(intent);
     }
 }

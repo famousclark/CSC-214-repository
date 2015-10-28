@@ -15,7 +15,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BrowseToActivity"
+        <activity
+            android:name=".BrowseToActivity"
+            android:parentActivityName=".MainActivity" >
+        </activity>
+        <activity android:name=".CameraActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".ContactsActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".DialPhoneActivity"
             android:parentActivityName=".MainActivity">
         </activity>
     </application>

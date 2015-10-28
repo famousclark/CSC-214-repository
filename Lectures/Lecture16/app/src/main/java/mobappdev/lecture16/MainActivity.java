@@ -31,6 +31,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(BrowseToActivity.newIntent(this));
                 handled = true;
                 break;
+            case R.id.menu_item_photo:
+                Intent intent = CameraActivity.newIntent(this);
+                startActivity(intent);
+                handled = true;
+                break;
+            case R.id.menu_item_contacts:
+                startActivity(ContactsActivity.newIntent(this));
+                handled = true;
+                break;
+            case R.id.menu_item_phone:
+                startActivity(DialPhoneActivity.newIntent(this));
+                handled = true;
+                break;
             default:
                 handled = super.onOptionsItemSelected(item);
                 break;
