@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Point;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -13,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.io.File;
@@ -77,43 +74,6 @@ public class CameraActivity extends AppCompatActivity {
             mPhoto.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
     }
-
-//    public static Bitmap getScaledBitmap(String path, Activity activity) {
-//        Point size = new Point();
-//        activity.getWindowManager().getDefaultDisplay().getSize(size);
-//
-//        return getScaledBitmap(path, size.x, size.y);
-//    }
-//
-//    public static Bitmap getScaledBitmap(String path, int width, int height) {
-//        BitmapFactory.Options options = new BitmapFactory.Options();
-//        options.inJustDecodeBounds = true;
-//        BitmapFactory.decodeFile(path, options);
-//
-//        float srcWidth = options.outWidth;
-//        float srcHeight = options.outHeight;
-//
-//        Log.d(TAG, "width=" + width + "," + "height=" + height);
-//        Log.d(TAG, "srcWidth=" + srcWidth + "," + "srcHeight=" + srcHeight);
-//
-//        int sampleSize = 1;
-//        if(srcHeight > height || srcWidth > width ) {
-//            if(srcWidth > srcHeight) {
-//                sampleSize = Math.round(srcHeight / height);
-//            }
-//            else {
-//                sampleSize = Math.round(srcWidth / width);
-//            }
-//        }
-//
-//        Log.d(TAG, "sampleSize=" + sampleSize);
-//
-//        BitmapFactory.Options scaledOptions = new BitmapFactory.Options();
-//        scaledOptions.inSampleSize = sampleSize;
-//
-//        return BitmapFactory.decodeFile(path, scaledOptions);
-//
-//    }
 
     public void displayImage(View view) {
         Intent intent = FullScreenPhotoActivity.newIntent(this, mPhotoFile.getPath());
