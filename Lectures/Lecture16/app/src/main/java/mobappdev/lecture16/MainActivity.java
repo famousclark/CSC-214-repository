@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         boolean handled;
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.menu_item_browse_to:
                 startActivity(BrowseToActivity.newIntent(this));
                 handled = true;

@@ -15,4 +15,7 @@
     <string name="hint_enter_phone_number">Enter a Phone Number</string>
     <string name="message_call_permission_granted">Call Permission Granted.</string>
     <string name="message_call_permission_denied">Call Permissions Denied.</string>
+    <string name="title_pick_browser">Pick a Browser, Yo</string>
+    <string name="label_bad_intent">Browse With Bad Intent</string>
+    <string name="message_no_activities">No Activities Match!</string>
 </resources>
