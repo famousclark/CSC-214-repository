@@ -19,11 +19,12 @@
         android:onClick="takeAPhoto"
         />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/image_button_photo"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_centerHorizontal="true"
         android:layout_above="@id/button_photo"
+        android:onClick="displayImage"
         />
 </RelativeLayout>

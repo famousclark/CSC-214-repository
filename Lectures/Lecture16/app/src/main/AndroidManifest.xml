@@ -4,8 +4,9 @@
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-                     android:maxSdkVersion="18"/>
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -24,15 +25,20 @@
             android:name=".BrowseToActivity"
             android:parentActivityName=".MainActivity" >
         </activity>
-        <activity android:name=".CameraActivity"
-            android:parentActivityName=".MainActivity">
+        <activity
+            android:name=".CameraActivity"
+            android:parentActivityName=".MainActivity" >
         </activity>
         <activity
             android:name=".ContactsActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity" >
         </activity>
-        <activity android:name=".DialPhoneActivity"
-            android:parentActivityName=".MainActivity">
+        <activity
+            android:name=".DialPhoneActivity"
+            android:parentActivityName=".MainActivity" >
+        </activity>
+        <activity android:name=".FullScreenPhotoActivity"
+            android:parentActivityName=".CameraActivity">
         </activity>
     </application>
 
