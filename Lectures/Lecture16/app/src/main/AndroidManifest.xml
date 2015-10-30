@@ -26,7 +26,7 @@
             android:parentActivityName=".MainActivity" >
         </activity>
         <activity
-            android:name=".CameraActivity"
+            android:name=".camera.CameraActivity"
             android:parentActivityName=".MainActivity" >
         </activity>
         <activity
@@ -35,10 +35,12 @@
         </activity>
         <activity
             android:name=".DialPhoneActivity"
+            android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" >
         </activity>
-        <activity android:name=".FullScreenPhotoActivity"
-            android:parentActivityName=".CameraActivity">
+        <activity
+            android:name=".FullScreenPhotoActivity"
+            android:parentActivityName=".camera.CameraActivity" >
         </activity>
     </application>
 

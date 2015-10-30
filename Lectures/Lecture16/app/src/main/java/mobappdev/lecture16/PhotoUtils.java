@@ -27,7 +27,7 @@ public class PhotoUtils {
         float srcWidth = options.outWidth;
         float srcHeight = options.outHeight;
 
-        Log.d(TAG, "width=" + width + "," + "height=" + height);
+        Log.d(TAG, "requested width=" + width + "," + "requested height=" + height);
         Log.d(TAG, "srcWidth=" + srcWidth + "," + "srcHeight=" + srcHeight);
 
         int sampleSize = 1;
@@ -45,7 +45,8 @@ public class PhotoUtils {
         BitmapFactory.Options scaledOptions = new BitmapFactory.Options();
         scaledOptions.inSampleSize = sampleSize;
 
-        return BitmapFactory.decodeFile(path, scaledOptions);
+        //return BitmapFactory.decodeFile(path, scaledOptions);
+        return BitmapFactory.decodeFile(path);
 
     }
 }
