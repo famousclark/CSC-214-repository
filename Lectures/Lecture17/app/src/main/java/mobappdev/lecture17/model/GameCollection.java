@@ -17,10 +17,12 @@ public class GameCollection {
 
     private VGDAO mDao;
     private Map<UUID,VideoGame> mGames;
+    private List<VideoGame> mGamesList;
 
     private GameCollection(Context context) {
         mDao = VGDAO.get(context);
         mGames = null;
+        mGamesList = null;
     }
 
     public static synchronized GameCollection get(Context context) {
@@ -31,19 +33,25 @@ public class GameCollection {
     }
 
     public List<VideoGame> getGames() {
-        mGames = mDao.getVideoGames();
-        List<VideoGame> games = new ArrayList<>(mGames.size());
+        return getGames(false);
+    }
 
-        for(VideoGame game:mGames.values()) {
-            games.add(game);
+    public List<VideoGame> getGames(boolean force) {
+        if(force || mGames == null) {
+            mGames = mDao.getVideoGames();
+            mGamesList = new ArrayList<>(mGames.size());
+
+            for(VideoGame game:mGames.values()) {
+                mGamesList.add(game);
+            }
         }
-
-        return games;
+        return mGamesList;
     }
 
     public void addGame(VideoGame game) {
         mDao.addVideoGame(game);
         mGames.put(game.getId(), game);
+        mGamesList.add(game);
     }
 
     public VideoGame getGame(UUID id) {
