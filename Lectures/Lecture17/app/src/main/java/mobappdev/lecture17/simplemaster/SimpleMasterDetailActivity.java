@@ -11,7 +11,7 @@ public class SimpleMasterDetailActivity extends AppCompatActivity implements Sim
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple_md);
+        setContentView(R.layout.activity_simple_master_detail);
 
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction()
