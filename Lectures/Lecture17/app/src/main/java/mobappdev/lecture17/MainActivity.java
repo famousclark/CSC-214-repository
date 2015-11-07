@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import mobappdev.lecture17.masterdetail.MasterDetailActivity;
+import mobappdev.lecture17.reclcyclerview.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,5 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void simpleMasterDetail(View view) {
         startActivity(new Intent(this, MasterDetailActivity.class));
+    }
+
+    public void recyclerViewExample(View view) {
+        startActivity(new Intent(this, RecyclerViewActivity.class));
     }
 }

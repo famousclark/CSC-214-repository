@@ -23,6 +23,10 @@
         </activity>
         <activity android:name=".masterdetail.DetailActivity" >
         </activity>
+        <activity android:name=".reclcyclerview.RecyclerViewActivity" >
+        </activity>
+        <activity android:name=".reclcyclerview.DisplayActivity" >
+        </activity>
     </application>
 
 </manifest>

@@ -8,4 +8,6 @@
     <string name="label_middle">Middle</string>
     <string name="label_bottom">Bottom</string>
     <string name="hint_message_here">Message Here</string>
+    <string name="label_recycler_view_example">Recycler View Example</string>
+    <string name="hint_display_message_here">Display Message Here</string>
 </resources>

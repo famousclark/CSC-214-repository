@@ -1,0 +1,13 @@
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_view_display"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mobappdev.lecture17.reclcyclerview.DisplayFragment"
+    android:hint="@string/hint_display_message_here"
+    android:gravity="center"
+    android:textSize="32sp"
+    >
+
+</TextView>
