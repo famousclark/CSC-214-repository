@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="activity_simple_md" type="layout">@layout/activity_simple_master_detail</item>
-</resources>

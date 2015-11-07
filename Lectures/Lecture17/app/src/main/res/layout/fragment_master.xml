@@ -1,0 +1,44 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mobappdev.lecture17.masterdetail.MasterFragment"
+    >
+
+    <TextView
+        android:id="@+id/text_view_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="24sp"
+        android:text="@string/label_top"
+        android:background="#FF5555"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/text_view_middle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="24sp"
+        android:text="@string/label_middle"
+        android:background="#FFFFAA"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/text_view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="24sp"
+        android:text="@string/label_bottom"
+        android:background="#5555FF"
+        android:gravity="center"
+        />
+
+
+</LinearLayout>

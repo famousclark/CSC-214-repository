@@ -4,4 +4,8 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_simple_master_detail">Simple Master-Detail Example</string>
+    <string name="label_top">Top</string>
+    <string name="label_middle">Middle</string>
+    <string name="label_bottom">Bottom</string>
+    <string name="hint_message_here">Message Here</string>
 </resources>
