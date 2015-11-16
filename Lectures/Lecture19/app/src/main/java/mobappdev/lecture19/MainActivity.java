@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import mobappdev.lecture19.Themes.TheminActivity;
 import mobappdev.lecture19.styles.StylinActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,5 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void startStylin(View view) {
         startActivity(StylinActivity.newIntent(this));
+    }
+
+    public void startThemin(View view) {
+        startActivity(TheminActivity.newIntent(this));
     }
 }

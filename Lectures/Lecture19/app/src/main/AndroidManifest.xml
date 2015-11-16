@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".styles.StylinActivity" >
-
+        </activity>
+        <activity android:name=".Themes.TheminActivity" >
         </activity>
     </application>
 

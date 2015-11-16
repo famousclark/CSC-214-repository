@@ -11,10 +11,20 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/button_stylin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_stylin"
         android:layout_centerInParent="true"
         android:onClick="startStylin"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_stylin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/label_themin"
+        android:onClick="startThemin"
         />
 </RelativeLayout>
