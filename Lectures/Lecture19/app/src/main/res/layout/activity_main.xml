@@ -20,11 +20,21 @@
         />
 
     <Button
+        android:id="@+id/button_themin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button_stylin"
         android:layout_centerHorizontal="true"
         android:text="@string/label_themin"
         android:onClick="startThemin"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_themin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/label_drawin"
+        android:onClick="startDrawin"
         />
 </RelativeLayout>

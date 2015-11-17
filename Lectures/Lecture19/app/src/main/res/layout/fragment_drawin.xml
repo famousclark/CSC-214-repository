@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mobappdev.lecture19.themes.TheminFragment"
-    tools:theme="@style/Themin"
-    >
+    tools:context="mobappdev.lecture19.drawin.DrawinFragment">
 
     <LinearLayout
         android:id="@+id/linear_layout_buttons"
@@ -24,34 +22,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="@string/label_buttons"/>
+            android:text="@string/label_buttons"
+            style="@style/DrawinButtonLessSimple"
+            />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="@string/label_that"/>
+            android:text="@string/label_that"
+            style="@style/DrawinButtonLessSimple"
+            />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="@string/label_dont"/>
+            android:text="@string/label_dont"
+            style="@style/DrawinButtonPressable"
+            />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="@string/label_do_anything"/>
+            android:text="@string/label_do_anything"
+            style="@style/DrawinButtonPressable"
+            />
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear_layout_buttons"
-        android:layout_centerHorizontal="true"
-        android:text="Text View!"
-        />
 
 </RelativeLayout>

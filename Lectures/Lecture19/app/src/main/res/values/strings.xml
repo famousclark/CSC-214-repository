@@ -9,4 +9,10 @@
     <string name="label_create_account">Create Account</string>
     <string name="label_stylin">Stylin\'</string>
     <string name="label_themin">Themin\'</string>
+    <string name="label_some">SOME</string>
+    <string name="label_buttons">BUTTONS</string>
+    <string name="label_that">THAT</string>
+    <string name="label_dont">DON\'T</string>
+    <string name="label_do_anything">DO ANYTHING</string>
+    <string name="label_drawin">Drawin\'</string>
 </resources>

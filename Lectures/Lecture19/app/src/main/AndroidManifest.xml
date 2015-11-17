@@ -17,8 +17,12 @@
         </activity>
         <activity android:name=".styles.StylinActivity" >
         </activity>
-        <activity android:name=".themes.TheminActivity"
-            android:theme="@style/Themin">
+        <activity
+            android:name=".themes.TheminActivity"
+            android:theme="@style/Themin" >
+        </activity>
+        <activity android:name=".drawin.DrawinActivity"
+            android:theme="@style/Drawin">
         </activity>
     </application>
 

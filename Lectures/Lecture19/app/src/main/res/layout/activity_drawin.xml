@@ -2,10 +2,9 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frame_layout_themin"
+    android:id="@+id/frame_layout_drawin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mobappdev.lecture19.themes.TheminActivity"
-    >
+    tools:context="mobappdev.lecture19.drawin.DrawinActivity">
 
 </FrameLayout>

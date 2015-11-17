@@ -8,12 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Themin" parent="AppTheme">
-        <item name="colorPrimary">@color/orange</item>
-        <item name="colorPrimaryDark">@color/rusty_orange</item>
-        <item name="colorAccent">@color/canary_yellow</item>
-        <item name="android:colorBackground">@color/canary_yellow</item>
-    </style>
+    <!-- stylin' styles -->
 
     <style name="StylinTextView">
         <item name="android:textSize">24sp</item>
@@ -29,6 +24,52 @@
         <item name="android:background">@color/light_blue</item>
         <item name="android:textColor">@color/dark_blue</item>
         <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <!-- themin' theme and styles -->
+
+    <style name="Themin" parent="AppTheme">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryDark">@color/rusty_orange</item>
+        <item name="colorAccent">@color/canary_yellow</item>
+        <item name="android:colorBackground">@color/canary_yellow</item>
+        <item name="android:buttonStyle">@style/TheminButton</item>
+        <item name="android:textViewStyle">@style/TheminTextView</item>
+    </style>
+
+    <style name="TheminButton" parent="android:style/Widget.Holo.Button">
+        <item name="android:background">@color/pale_yellow</item>
+        <item name="android:textColor">@color/rusty_orange</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="TheminTextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/rusty_orange</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <!-- drawin' theme and styles -->
+
+    <style name="Drawin" parent="AppTheme">
+        <item name="colorPrimary">@color/going_the_distance</item>
+        <item name="colorPrimaryDark">@color/cool_blue_reason</item>
+        <item name="colorAccent">@color/no_phone</item>
+        <item name="android:colorBackground">@color/no_phone</item>
+        <item name="android:buttonStyle">@style/DrawinButtonSimple</item>
+    </style>
+
+    <style name="DrawinButtonSimple" parent="android:style/Widget.Holo.Button">
+        <item name="android:background">@drawable/button_so_fancy</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="DrawinButtonLessSimple" parent="DrawinButtonSimple">
+        <item name="android:background">@drawable/button_omg_even_fancier</item>
+    </style>
+
+    <style name="DrawinButtonPressable" parent="DrawinButtonSimple">
+        <item name="android:background">@drawable/button_holy_ship</item>
     </style>
 
 </resources>

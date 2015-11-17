@@ -1,4 +1,4 @@
-package mobappdev.lecture19.themes;
+package mobappdev.lecture19.drawin;
 
 
 import android.os.Bundle;
@@ -12,23 +12,22 @@ import mobappdev.lecture19.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TheminFragment extends Fragment {
+public class DrawinFragment extends Fragment {
 
 
-    public TheminFragment() {
+    public DrawinFragment() {
         // Required empty public constructor
     }
 
-
-    public static TheminFragment newInstance() {
-        return new TheminFragment();
+    public static DrawinFragment newInstance() {
+        return new DrawinFragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_themin, container, false);
+        return inflater.inflate(R.layout.fragment_drawin, container, false);
     }
 
 

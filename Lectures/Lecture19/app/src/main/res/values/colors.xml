@@ -13,4 +13,10 @@
     <color name="rusty_orange">#CC5F00</color>
     <color name="orange">#FF9900</color>
     <color name="canary_yellow">#FFFF00</color>
+    <color name="pale_yellow">#ffffcc</color>
+
+    <color name="cool_blue_reason">#4a4ad9</color>
+    <color name="going_the_distance">#a4a4d1</color>
+    <color name="no_phone">#3a3a73</color>
+    <color name="perhaps_perhaps_perhaps">#ccccff</color>
 </resources>
