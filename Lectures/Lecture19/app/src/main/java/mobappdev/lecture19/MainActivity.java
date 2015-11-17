@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import mobappdev.lecture19.Themes.TheminActivity;
+import mobappdev.lecture19.themes.TheminActivity;
 import mobappdev.lecture19.styles.StylinActivity;
 
 public class MainActivity extends AppCompatActivity {

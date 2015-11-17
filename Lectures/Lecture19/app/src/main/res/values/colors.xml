@@ -9,4 +9,8 @@
     <color name="dark_blue">#0000CC</color>
     <color name="minty_green">#1FC64E</color>
     <color name="fire_engine_red">#CC0000</color>
+
+    <color name="rusty_orange">#CC5F00</color>
+    <color name="orange">#FF9900</color>
+    <color name="canary_yellow">#FFFF00</color>
 </resources>

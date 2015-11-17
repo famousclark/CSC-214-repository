@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".styles.StylinActivity" >
         </activity>
-        <activity android:name=".Themes.TheminActivity" >
+        <activity android:name=".themes.TheminActivity"
+            android:theme="@style/Themin">
         </activity>
     </application>
 

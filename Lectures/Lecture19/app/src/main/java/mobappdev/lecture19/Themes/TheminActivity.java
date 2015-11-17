@@ -1,4 +1,4 @@
-package mobappdev.lecture19.Themes;
+package mobappdev.lecture19.themes;
 
 import android.content.Context;
 import android.content.Intent;

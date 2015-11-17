@@ -8,6 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Themin" parent="AppTheme">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryDark">@color/rusty_orange</item>
+        <item name="colorAccent">@color/canary_yellow</item>
+        <item name="android:colorBackground">@color/canary_yellow</item>
+    </style>
+
     <style name="StylinTextView">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/dark_blue</item>

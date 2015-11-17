@@ -5,6 +5,7 @@
     android:id="@+id/frame_layout_themin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mobappdev.lecture19.Themes.TheminActivity">
+    tools:context="mobappdev.lecture19.themes.TheminActivity"
+    tools:theme="@style/Themin">
 
 </FrameLayout>
