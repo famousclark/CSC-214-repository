@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lecture20</string>
+    <string name="label_bad_network">Bad Network</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_blow_up">Blow Up</string>
+    <string name="hint_enter_url">Enter URL</string>
+    <string name="label_get_url">Get URL</string>
+    <string name="label_async_network">Async Network</string>
+</resources>
