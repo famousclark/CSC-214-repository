@@ -60,7 +60,6 @@ public class AsyncNetworkFragment extends Fragment {
             catch(IOException ioe) {
                 result = "IO Error: " + ioe.getMessage();
             }
-            mMessage.setText(result);
             return result;
         }
 
