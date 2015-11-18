@@ -8,4 +8,8 @@
     <string name="hint_enter_url">Enter URL</string>
     <string name="label_get_url">Get URL</string>
     <string name="label_async_network">Async Network</string>
+    <string name="label_get_images">Get Images</string>
+    <string name="label_pop_up_toast">Toast!</string>
+    <string name="hint_enter_toast_message">Enter Toast Message</string>
+    <string name="message_finished">Finished downloading images!</string>
 </resources>

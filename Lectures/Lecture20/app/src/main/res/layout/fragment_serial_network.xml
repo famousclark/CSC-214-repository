@@ -1,0 +1,49 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mobappdev.lecture20.serialnetwork.SerialNetworkFragment">
+
+    <ProgressBar
+        android:id="@+id/progress_bar_download_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        />
+
+    <EditText
+        android:id="@+id/edit_text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_enter_toast_message"
+        android:layout_below="@id/progress_bar_download_task"
+        android:gravity="center"
+        android:inputType="textUri"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/edit_text_message"
+        >
+        <Button
+            android:id="@+id/button_get_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="@string/label_get_images"
+            />
+
+        <Button
+            android:id="@+id/button_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="@string/label_pop_up_toast"
+            />
+    </LinearLayout>
+</RelativeLayout>

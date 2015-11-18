@@ -6,6 +6,7 @@ import android.view.View;
 
 import mobappdev.lecture20.asyncnetwork.AsyncNetworkActivity;
 import mobappdev.lecture20.badnetwork.BadNetworkActivity;
+import mobappdev.lecture20.serialnetwork.SerialNetworkActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,5 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void startAsyncNetwork(View view) {
         startActivity(AsyncNetworkActivity.newIntent(this));
+    }
+
+    public void startSerialNetwork(View view) {
+        startActivity(SerialNetworkActivity.newIntent(this));
     }
 }
