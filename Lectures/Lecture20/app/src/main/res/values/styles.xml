@@ -3,11 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/buttercup_brown</item>
-        <item name="colorPrimaryDark">@color/buttercup_black</item>
+        <item name="colorPrimary">@color/buttercup_light_brown</item>
+        <item name="colorPrimaryDark">@color/buttercup_brown</item>
         <item name="colorAccent">@color/buttercup_white</item>
         <item name="android:buttonStyle">@style/ButtercupButton</item>
-        <item name="android:colorBackground">@color/buttercup_light_brown</item>
+        <item name="android:colorBackground">@color/buttercup_white</item>
     </style>
 
     <style name="ButtercupButton">
