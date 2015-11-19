@@ -12,4 +12,6 @@
     <string name="label_pop_up_toast">Toast!</string>
     <string name="hint_enter_toast_message">Enter Toast Message</string>
     <string name="message_finished">Finished downloading images!</string>
+    <string name="label_looper_network">Looper Network</string>
+    <string name="label_serial_network">Serial Network</string>
 </resources>

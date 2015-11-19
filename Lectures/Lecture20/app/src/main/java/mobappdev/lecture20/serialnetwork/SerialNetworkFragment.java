@@ -26,6 +26,7 @@ public class SerialNetworkFragment extends Fragment {
     private static final String IMAGE_URL = "https://www.google.com/images/nav_logo242.png";
 
     private ProgressBar mProgressBar;
+    private Button mGetImages;
 
     public SerialNetworkFragment() {
         // Required empty public constructor
@@ -50,10 +51,11 @@ public class SerialNetworkFragment extends Fragment {
         mProgressBar = (ProgressBar)view.findViewById(R.id.progress_bar_download_task);
         mProgressBar.setMax(100);
 
-        Button getImages = (Button)view.findViewById(R.id.button_get_images);
-        getImages.setOnClickListener(new View.OnClickListener() {
+        mGetImages = (Button)view.findViewById(R.id.button_get_images);
+        mGetImages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mGetImages.setEnabled(false);
                 new BigDownloadTask().execute(IMAGE_URL);
             }
         });
@@ -99,6 +101,7 @@ public class SerialNetworkFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Void aVoid) {
+            mGetImages.setEnabled(true);
             Toast.makeText(getActivity(), R.string.message_finished, Toast.LENGTH_SHORT).show();
         }
     }

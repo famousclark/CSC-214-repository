@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".serialnetwork.SerialNetworkActivity" >
         </activity>
-        <activity android:name=".Fragtivity" >
+        <activity android:name=".loopernetwork.LooperNetworkActivity" >
         </activity>
     </application>
 
