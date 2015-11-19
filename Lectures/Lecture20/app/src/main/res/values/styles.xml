@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/buttercup_light_brown</item>
         <item name="colorPrimaryDark">@color/buttercup_brown</item>
-        <item name="colorAccent">@color/buttercup_white</item>
+        <item name="colorAccent">@color/buttercup_black</item>
         <item name="android:buttonStyle">@style/ButtercupButton</item>
         <item name="android:colorBackground">@color/buttercup_white</item>
     </style>
