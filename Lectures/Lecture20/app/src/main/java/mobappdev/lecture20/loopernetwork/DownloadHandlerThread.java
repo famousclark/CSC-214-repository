@@ -12,20 +12,18 @@ import mobappdev.lecture20.HttpHelper;
 /**
  * Created by Bobby on 11/18/2015.
  */
-public class GetImageHandler extends HandlerThread {
+public class DownloadHandlerThread extends HandlerThread {
     private static final String TAG = "GetImageHandlerTag";
     private static final int MESSAGE_DOWNLOAD_IMAGES = 5678;
 
-    public interface DownloadProgressListener {
-        public void imagesDownloadedSoFar(int number);
-        public void downloadComplete();
+    public interface DownloadProgressListener extends JobListener<Integer> {
     }
 
     private Handler mHandler;
     private Handler mResponseHandler;
     private DownloadProgressListener mListener;
 
-    public GetImageHandler(Handler responseHandler) {
+    public DownloadHandlerThread(Handler responseHandler) {
         super(TAG);
         mResponseHandler = responseHandler;
     }
@@ -40,10 +38,18 @@ public class GetImageHandler extends HandlerThread {
 
     @Override
     protected void onLooperPrepared() {
-        mHandler = new DownloadHandler();
+        mHandler = new DownloadHandler(mResponseHandler, mListener);
     }
 
-    private class DownloadHandler extends Handler {
+    private static class DownloadHandler extends Handler {
+        private final Handler mResponseHandler;
+        private final DownloadProgressListener mListener;
+
+        DownloadHandler(Handler responseHandler, DownloadProgressListener listener) {
+            mResponseHandler = responseHandler;
+            mListener = listener;
+        }
+
         @Override
         public void handleMessage(Message msg) {
             if(msg.what == MESSAGE_DOWNLOAD_IMAGES) {
@@ -53,25 +59,15 @@ public class GetImageHandler extends HandlerThread {
                 for(int i=1; succeeded  && i<=100; i++) {
                     try {
                         helper.getBytes(url);
-                        final int number = i;
-                        mResponseHandler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                mListener.imagesDownloadedSoFar(number);
-                            }
-                        });
+                        final int count = i;
+                        mResponseHandler.post(new WorkPoster<Integer>(count, mListener));
                     }
                     catch(IOException ioe) {
                         Log.e(TAG, "Failed to get image: " + url);
                         succeeded = false;
                     }
                 }
-                mResponseHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        mListener.downloadComplete();
-                    }
-                });
+                mResponseHandler.post(new JobCompletePoster(mListener));
             }
         }
     }

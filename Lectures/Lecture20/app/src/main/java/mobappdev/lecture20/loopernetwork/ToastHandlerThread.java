@@ -10,15 +10,13 @@ import android.widget.Toast;
  * Created by Bobby on 11/18/2015.
  */
 public class ToastHandlerThread extends HandlerThread {
+    static final int MESSAGE_POP = 1234;
     private static final String TAG = "ToastHandlerTag";
-    private static final int MESSAGE_POP = 1234;
     private Handler mHandler;
     private Handler mResponseHandler;
     private ToastListener mListener;
 
-    public interface ToastListener {
-        void toastReadyToPop(String message);
-    }
+    public interface ToastListener extends JobListener<String> {}
 
     public ToastHandlerThread(Handler responseHandler) {
         super(TAG);
@@ -35,20 +33,23 @@ public class ToastHandlerThread extends HandlerThread {
 
     @Override
     protected void onLooperPrepared() {
-        mHandler = new ToastHandler();
+        mHandler = new ToastHandler(mResponseHandler, mListener);
     }
 
-    private class ToastHandler extends Handler {
+    private static class ToastHandler extends Handler {
+        private final Handler mResponseHandler;
+        private final ToastListener mListener;
+
+        public ToastHandler(Handler responseHandler, ToastListener listener) {
+            mResponseHandler = responseHandler;
+            mListener = listener;
+        }
+
         @Override
         public void handleMessage(Message msg) {
-            if (msg.what == MESSAGE_POP) {
+            if (msg.what == ToastHandlerThread.MESSAGE_POP) {
                 final String message = msg.obj.toString();
-                mResponseHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        mListener.toastReadyToPop(message);
-                    }
-                });
+                mResponseHandler.post(new WorkPoster<String>(message, mListener));
             }
         }
     }

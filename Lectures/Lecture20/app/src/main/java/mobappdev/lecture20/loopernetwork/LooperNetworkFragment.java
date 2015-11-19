@@ -24,7 +24,7 @@ public class LooperNetworkFragment extends Fragment {
 
     private ProgressBar mProgressBar;
     private Button mGetImages;
-    private GetImageHandler mImagesHandler;
+    private DownloadHandlerThread mImagesHandler;
     private ToastHandlerThread mToastHandler;
 
     public LooperNetworkFragment() {
@@ -42,15 +42,15 @@ public class LooperNetworkFragment extends Fragment {
 
         Handler responseHandler = new Handler();
 
-        mImagesHandler = new GetImageHandler(responseHandler);
-        mImagesHandler.setDownloadProgressListener(new GetImageHandler.DownloadProgressListener() {
+        mImagesHandler = new DownloadHandlerThread(responseHandler);
+        mImagesHandler.setDownloadProgressListener(new DownloadHandlerThread.DownloadProgressListener() {
             @Override
-            public void imagesDownloadedSoFar(int number) {
-                mProgressBar.setProgress(number);
+            public void someWorkCompleted(Integer work) {
+                mProgressBar.setProgress(work);
             }
 
             @Override
-            public void downloadComplete() {
+            public void jobComplete() {
                 mGetImages.setEnabled(true);
                 Toast.makeText(getActivity(), R.string.message_finished, Toast.LENGTH_SHORT).show();
             }
@@ -64,9 +64,12 @@ public class LooperNetworkFragment extends Fragment {
         mToastHandler = new ToastHandlerThread(responseHandler);
         mToastHandler.setToastListener(new ToastHandlerThread.ToastListener() {
             @Override
-            public void toastReadyToPop(String message) {
-                Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+            public void someWorkCompleted(String work) {
+                Toast.makeText(getContext(), work, Toast.LENGTH_SHORT).show();
             }
+
+            @Override
+            public void jobComplete() {}
         });
         mToastHandler.start();
         mToastHandler.getLooper();
