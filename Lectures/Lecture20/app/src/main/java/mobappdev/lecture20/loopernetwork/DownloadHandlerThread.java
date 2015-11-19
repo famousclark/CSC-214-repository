@@ -53,7 +53,7 @@ public class DownloadHandlerThread extends HandlerThread {
         @Override
         public void handleMessage(Message msg) {
             if(msg.what == MESSAGE_DOWNLOAD_IMAGES) {
-                final String url = msg.obj.toString();
+                String url = msg.obj.toString();
                 HttpHelper helper = new HttpHelper();
                 boolean succeeded = true;
                 for(int i=1; succeeded  && i<=100; i++) {
