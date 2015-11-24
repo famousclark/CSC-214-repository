@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import mobappdev.lecture21.mediaplayer.MediaPlayerActivity;
+import mobappdev.lecture21.reminder.ReminderActivity;
 import mobappdev.lecture21.sharedprefs.SharedPrefsActivity;
 
 
@@ -44,6 +45,14 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(SharedPrefsActivity.newIntent(getActivity()));
+            }
+        });
+
+        Button reminder = (Button)view.findViewById(R.id.button_reminder);
+        reminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(ReminderActivity.newIntent(getActivity()));
             }
         });
 

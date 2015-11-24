@@ -27,5 +27,12 @@
             android:text="@string/label_shared_prefs"
             />
 
+        <Button
+            android:id="@+id/button_reminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_reminder"
+            />
+
     </LinearLayout>
 </RelativeLayout>

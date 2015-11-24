@@ -9,4 +9,10 @@
     <string name="label_shared_prefs">Shared Preferences</string>
     <string name="hint_store_in_bundle">Store in a Bundle</string>
     <string name="hint_shared_prefs">Store in a Shared Pref</string>
+    <string name="label_reminder">Reminder</string>
+    <string name="hint_wait_time">Enter minutes to wait...</string>
+    <string name="hint_message">Enter Reminder Message</string>
+    <string name="label_create_reminder">Create Reminder</string>
+    <string name="title_reminder">Reminder!</string>
+    <string name="toast_reminder">Reminder created!</string>
 </resources>

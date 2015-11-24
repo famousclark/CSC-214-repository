@@ -19,6 +19,17 @@
         </activity>
         <activity android:name=".sharedprefs.SharedPrefsActivity" >
         </activity>
+        <activity android:name=".reminder.ReminderActivity" >
+        </activity>
+
+        <service
+            android:name=".reminder.ReminderService"
+            android:exported="false" >
+        </service>
+        <service
+            android:name=".reminder.MyIntentService"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>
