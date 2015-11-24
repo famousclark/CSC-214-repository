@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".mediaplayer.MediaPlayerActivity" >
         </activity>
+        <activity android:name=".sharedprefs.SharedPrefsActivity" >
+        </activity>
     </application>
 
 </manifest>

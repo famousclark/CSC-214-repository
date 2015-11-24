@@ -4,4 +4,9 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_media_player">Media Player</string>
+    <string name="hint_time_capsule">Type Something!</string>
+    <string name="label_store_it">Store It!</string>
+    <string name="label_shared_prefs">Shared Preferences</string>
+    <string name="hint_store_in_bundle">Store in a Bundle</string>
+    <string name="hint_shared_prefs">Store in a Shared Pref</string>
 </resources>

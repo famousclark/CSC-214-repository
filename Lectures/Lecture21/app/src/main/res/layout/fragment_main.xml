@@ -20,5 +20,12 @@
             android:text="@string/label_media_player"
             />
 
+        <Button
+            android:id="@+id/button_shared_prefs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_shared_prefs"
+            />
+
     </LinearLayout>
 </RelativeLayout>

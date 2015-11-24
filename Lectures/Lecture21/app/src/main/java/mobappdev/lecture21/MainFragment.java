@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import mobappdev.lecture21.mediaplayer.MediaPlayerActivity;
+import mobappdev.lecture21.sharedprefs.SharedPrefsActivity;
 
 
 /**
@@ -35,6 +36,14 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(MediaPlayerActivity.newIntent(getActivity()));
+            }
+        });
+
+        Button sharedPrefs = (Button)view.findViewById(R.id.button_shared_prefs);
+        sharedPrefs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(SharedPrefsActivity.newIntent(getActivity()));
             }
         });
 
