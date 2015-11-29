@@ -1,0 +1,78 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mobappdev.lecture22.bowser.WebBowserFragment">
+
+    <TextView
+        android:id="@+id/text_view_web_bowser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/web_bowser"
+        style="@style/BootTextView"
+        android:background="@color/bowserGreenDark"
+        android:textColor="@color/bowserYellow"
+        android:textColorHighlight="@color/bowserYellowDark"
+        android:padding="6dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bowserGreen"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/http"
+            android:labelFor="@+id/edit_text_uri"
+            android:layout_margin="3dp"
+            android:textColor="@color/bowserYellow"
+            android:gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_uri"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="textUri"
+            android:textColor="@color/bowserOrangeDark"
+            android:fontFamily="monospace"
+            />
+
+        <Button
+            android:id="@+id/button_go"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/go"
+            android:textColor="@color/bowserYellow"
+            android:background="@drawable/bowser_button"
+            />
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/bowserOrange"
+        >
+
+    </WebView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_bowser"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:visibility="gone"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        />
+
+</LinearLayout>

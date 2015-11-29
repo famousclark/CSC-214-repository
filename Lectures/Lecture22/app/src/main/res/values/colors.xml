@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="bowserYellow">#FED338</color>
+    <color name="bowserYellowDark">#DD8016</color>
+    <color name="bowserOrange">#FF7D06</color>
+    <color name="bowserOrangeDark">#E93C02</color>
+    <color name="bowserGreen">#79B05E</color>
+    <color name="bowserGreenDark">#3D9C31</color>
+    <color name="bowserIvory">#FEDF99</color>
+    <color name="bowserIvoryDark">#DFB573</color>
+    <color name="white">#FFFFFF</color>
+</resources>

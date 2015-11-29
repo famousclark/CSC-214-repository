@@ -1,0 +1,45 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context="mobappdev.lecture22.receiver.ReceiverFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/device_boot_date"
+        style="@style/BootTextView"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/text_view_boot_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BootTextView"
+        android:fontFamily="monospace"
+        tools:text="Boot Date Here"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_device_boot_time"
+        style="@style/BootTextView"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/text_view_boot_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BootTextView"
+        android:fontFamily="monospace"
+        tools:text="Boot Time Here"
+        />
+
+</LinearLayout>
