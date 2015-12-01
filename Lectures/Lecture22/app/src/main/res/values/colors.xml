@@ -13,4 +13,7 @@
     <color name="bowserIvory">#FEDF99</color>
     <color name="bowserIvoryDark">#DFB573</color>
     <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00CC00</color>
+
 </resources>

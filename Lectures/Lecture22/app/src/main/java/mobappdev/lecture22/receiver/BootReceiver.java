@@ -3,7 +3,6 @@ package mobappdev.lecture22.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -20,5 +19,10 @@ public class BootReceiver extends BroadcastReceiver {
         Log.i(TAG, "Intent received: " + intent.getAction());
 
         Prefs.setBootTime(context, System.currentTimeMillis());
+
+        PreferenceManager.getDefaultSharedPreferences(context)
+                .edit()
+                .putLong("boot_time", System.currentTimeMillis())
+                .apply();
     }
 }

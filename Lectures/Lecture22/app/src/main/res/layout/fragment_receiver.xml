@@ -42,4 +42,14 @@
         tools:text="Boot Time Here"
         />
 
+    <TextView
+        android:id="@+id/text_view_battery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/battery_is"
+        style="@style/BootTextView"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        />
+
 </LinearLayout>

@@ -25,7 +25,10 @@
         <activity android:name=".receiver.ReceiverActivity">
         </activity>
 
-        <receiver android:name=".receiver.BootReceiver">
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
@@ -33,6 +36,7 @@
 
         <activity android:name=".broadcaster.BroadcasterActivity">
         </activity>
+
     </application>
 
 </manifest>

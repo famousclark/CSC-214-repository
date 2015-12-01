@@ -12,4 +12,10 @@
     <string name="go">Go</string>
     <string name="stop_loading">Stop Loading</string>
     <string name="broadcasters">Broadcasters</string>
+    <string name="battery_is">Battery Is: %1$s</string>
+    <string name="battery_low">LOW</string>
+    <string name="battery_ok">OK</string>
+    <string name="battery_unknown">Unknown</string>
+    <string name="battery_high">High</string>
+    <string name="battery_full">FULL</string>
 </resources>
