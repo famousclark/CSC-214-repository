@@ -4,19 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/bowserOrange"
     tools:context="mobappdev.lecture22.bowser.WebBowserFragment">
 
-    <TextView
-        android:id="@+id/text_view_web_bowser"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/web_bowser"
-        style="@style/BootTextView"
-        android:background="@color/bowserGreenDark"
-        android:textColor="@color/bowserYellow"
-        android:textColorHighlight="@color/bowserYellowDark"
-        android:padding="6dp"
-        />
+        android:background="@color/bowserGreenDark">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_logo"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/text_view_web_bowser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/web_bowser"
+            style="@style/BootTextView"
+            android:background="@color/bowserGreenDark"
+            android:textColor="@color/bowserYellow"
+            android:textColorHighlight="@color/bowserYellowDark"
+            android:padding="6dp"
+            />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_logo"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linear_layout_url"
@@ -32,6 +55,7 @@
             android:text="@string/http"
             android:labelFor="@+id/edit_text_uri"
             android:layout_margin="3dp"
+            android:fontFamily="monospace"
             android:textColor="@color/bowserYellow"
             android:gravity="center_vertical"
             />
@@ -44,15 +68,18 @@
             android:inputType="textUri"
             android:textColor="@color/bowserOrangeDark"
             android:fontFamily="monospace"
+            tools:text="Url Goes Here"
             />
 
-        <Button
-            android:id="@+id/button_go"
-            android:layout_width="60dp"
+        <ImageButton
+            android:id="@+id/button_stop"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/go"
-            android:textColor="@color/bowserYellow"
-            android:background="@drawable/bowser_button"
+            android:src="@drawable/ic_stop"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:background="@color/bowserGreen"
+            android:contentDescription="@string/stop_loading"
             />
 
     </LinearLayout>

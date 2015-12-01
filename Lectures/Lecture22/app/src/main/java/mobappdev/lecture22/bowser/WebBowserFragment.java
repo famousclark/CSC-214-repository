@@ -5,14 +5,15 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -22,10 +23,11 @@ import mobappdev.lecture22.R;
  * A simple {@link Fragment} subclass.
  */
 public class WebBowserFragment extends Fragment {
+    private static final String FONT = "fonts/mario_and_luigi.ttf";
 
     private ProgressBar mProgressBar;
     private WebView mWebView;
-    private Button mGo;
+    private ImageButton mStop;
     private EditText mUrl;
 
     public WebBowserFragment() {
@@ -43,7 +45,7 @@ public class WebBowserFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_web_bowser, container, false);
 
-        Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/mario.ttf");
+        Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), FONT);
         TextView webBowser = (TextView)view.findViewById(R.id.text_view_web_bowser);
         webBowser.setTypeface(typeface);
 
@@ -57,10 +59,10 @@ public class WebBowserFragment extends Fragment {
             public void onProgressChanged(WebView view, int newProgress) {
                 if(newProgress == 100) {
                     mProgressBar.setVisibility(View.GONE);
-                    mGo.setEnabled(true);
+                    mStop.setVisibility(View.GONE);
                 }
                 else {
-                    mGo.setEnabled(false);
+                    mStop.setVisibility(View.VISIBLE);
                     mProgressBar.setVisibility(View.VISIBLE);
                     mProgressBar.setProgress(newProgress);
                 }
@@ -78,20 +80,36 @@ public class WebBowserFragment extends Fragment {
         });
 
         mUrl = (EditText)view.findViewById(R.id.edit_text_uri);
-
-        mGo = (Button)view.findViewById(R.id.button_go);
-        mGo.setOnClickListener(new View.OnClickListener() {
+        mUrl.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onClick(View v) {
-                String url = mUrl.getText().toString().toLowerCase();
-                if(url.startsWith("http") == false) {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String url = mUrl.getText().toString();
+                if(url.toLowerCase().startsWith("http") == false) {
                     url = "http://" + url;
                 }
                 mWebView.loadUrl(url);
+                return true;
+            }
+        });
+
+        mStop = (ImageButton)view.findViewById(R.id.button_stop);
+        mStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mWebView.stopLoading();
             }
         });
 
         return view;
+    }
+
+    public boolean goBack() {
+        boolean didGoBack = false;
+        if(mWebView != null && mWebView.canGoBack()) {
+            mWebView.goBack();
+            didGoBack = true;
+        }
+        return didGoBack;
     }
 
 }

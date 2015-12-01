@@ -10,4 +10,6 @@
     <string name="web_bowser">WEB BOWSER</string>
     <string name="http">http://</string>
     <string name="go">Go</string>
+    <string name="stop_loading">Stop Loading</string>
+    <string name="broadcasters">Broadcasters</string>
 </resources>

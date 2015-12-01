@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_bowser"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -18,19 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".bowser.WebBowserActivity"
+        <activity
+            android:name=".bowser.WebBowserActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
-
         <activity android:name=".receiver.ReceiverActivity">
         </activity>
 
-        <receiver
-            android:name=".receiver.BootReceiver">
+        <receiver android:name=".receiver.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
+
+        <activity android:name=".broadcaster.BroadcasterActivity">
+        </activity>
     </application>
 
 </manifest>

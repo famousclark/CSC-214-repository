@@ -11,12 +11,22 @@ import mobappdev.lecture22.Fragtivity;
 import mobappdev.lecture22.R;
 
 public class WebBowserActivity extends Fragtivity {
-    @Override
-    public Fragment createFragment() {
-        return WebBowserFragment.newInstance();
-    }
+    private WebBowserFragment mWebBowserFragment;
 
     public static Intent newIntent(Context context) {
         return new Intent(context, WebBowserActivity.class);
+    }
+
+    @Override
+    public Fragment createFragment() {
+        mWebBowserFragment = WebBowserFragment.newInstance();
+        return mWebBowserFragment;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(mWebBowserFragment == null || mWebBowserFragment.goBack() == false) {
+            super.onBackPressed();
+        }
     }
 }

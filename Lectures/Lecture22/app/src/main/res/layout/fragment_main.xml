@@ -8,6 +8,14 @@
     tools:context="mobappdev.lecture22.MainFragment">
 
     <Button
+        android:id="@+id/button_broadcasters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/broadcasters"
+        />
+
+    <Button
         android:id="@+id/button_receivers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
