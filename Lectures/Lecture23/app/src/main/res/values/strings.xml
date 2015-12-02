@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Lecture23</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_a_message_to_broadcast">Enter a Message to Broadcast</string>
+    <string name="broadcast_message">Broadcast Message</string>
+    <string name="broadcast_receiver_one">Broadcast Receiver One</string>
+    <string name="trap_broadcast">Trap Broadcast</string>
+    <string name="no_message_received">No Message Received</string>
+    <string name="broadcast_receiver_two">Broadcast Receiver Two</string>
+    <string name="ordered_receivers">Ordered Receivers</string>
 </resources>
