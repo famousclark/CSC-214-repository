@@ -18,5 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/ordered_receivers"/>
+    <Button
+        android:id="@+id/button_paintr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="paintR"/>
+
 
 </LinearLayout>

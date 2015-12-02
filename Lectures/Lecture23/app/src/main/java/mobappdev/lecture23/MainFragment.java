@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import mobappdev.lecture23.paintr.PaintrActivity;
 import mobappdev.lecture23.talktomyself.TalkToMyselfActivity;
 import mobappdev.lecture23.whispershout.WhisperShoutActivity;
 
@@ -45,6 +46,14 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(TalkToMyselfActivity.newIntent(getActivity()));
+            }
+        });
+
+        Button paintR = (Button)view.findViewById(R.id.button_paintr);
+        paintR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(PaintrActivity.newIntent(getActivity()));
             }
         });
 

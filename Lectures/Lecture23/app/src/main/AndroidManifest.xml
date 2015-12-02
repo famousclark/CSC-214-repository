@@ -2,7 +2,9 @@
 <manifest package="mobappdev.lecture23"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <permission android:name="mobappdev.lecture23.WHISPER" android:protectionLevel="signature"/>
+    <permission
+        android:name="mobappdev.lecture23.WHISPER"
+        android:protectionLevel="signature"/>
 
     <uses-permission android:name="mobappdev.lecture23.WHISPER"/>
 
@@ -22,7 +24,8 @@
         <activity android:name=".talktomyself.TalkToMyselfActivity"/>
         <activity android:name=".whispershout.WhisperShoutActivity">
         </activity>
-
+        <activity android:name=".paintr.PaintrActivity">
+        </activity>
     </application>
 
 </manifest>
