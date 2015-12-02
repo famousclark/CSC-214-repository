@@ -7,23 +7,18 @@ import android.graphics.PointF;
 /**
  * Created by Bobby on 12/1/2015.
  */
-public class Line extends Shape {
-    private PointF mFinish;
+public class Line extends DrawingTool {
 
-    public Line(PointF start) {
-        super(start);
-    }
-
-    public PointF getFinish() {
-        return mFinish;
-    }
-
-    public void setFinish(PointF finish) {
-        mFinish = finish;
+    public Line(PointF start, int color) {
+        super(start, color);
     }
 
     @Override
     public void draw(Canvas canvas, Paint paint) {
-        canvas.drawLine(getStart().x, getStart().y, mFinish.x, mFinish.y, paint);
+        PointF start = getStart();
+        PointF finish = getFinish();
+        paint.setColor(getColor());
+        paint.setStrokeWidth(5.0f);
+        canvas.drawLine(start.x, start.y, finish.x, finish.y, paint);
     }
 }

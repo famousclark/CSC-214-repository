@@ -15,4 +15,12 @@
     <string name="shout">Shout</string>
     <string name="whisper_something">Whisper Something</string>
     <string name="whisper">Whisper</string>
+    <string name="undo">UNDO</string>
+    <string name="erase_all">ERASE ALL</string>
+    <string name="fill_all">FILL ALL</string>
+    <string name="draw_rectangle">DRAW RECTANGLE</string>
+    <string name="draw_circle">DRAW CIRCLE</string>
+    <string name="paint">PAINT</string>
+    <string name="pencil">PENCIL</string>
+    <string name="draw_line">DRAW LINE</string>
 </resources>

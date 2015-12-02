@@ -12,15 +12,17 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-import mobappdev.lecture23.R;
-
 /**
  * Created by Bobby on 12/1/2015.
+ *
+ * A simple paint program.
  */
 public class Surface extends View {
-    private int mSelectedShape = ShapeFactory.SQUIGGLE;
-    private Shape mCurrentShape;
-    private List<Shape> mShapes;
+    private static final String TAG = "SurfaceLog";
+
+    private DrawingToolFactory.DrawingToolType mCurrentType;
+    private DrawingTool mCurrentDrawingTool;
+    private List<DrawingTool> mDrawingTools;
 
     private Paint mPaint;
     private Paint mCanvas;
@@ -32,13 +34,11 @@ public class Surface extends View {
     public Surface(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mShapes = new ArrayList<>();
+        mDrawingTools = new ArrayList<>();
 
         mPaint = new Paint();
-        mPaint.setColor(getResources().getColor(R.color.red));
 
         mCanvas = new Paint();
-        mCanvas.setColor(getResources().getColor(R.color.cream));
     }
 
     @Override
@@ -48,35 +48,76 @@ public class Surface extends View {
         switch(event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 action = "ACTION_DOWN";
-                mCurrentShape = ShapeFactory.makeShape(current, mSelectedShape);
-                mShapes.add(mCurrentShape);
+                mCurrentDrawingTool = DrawingToolFactory.makeShape(mCurrentType, current,
+                        mPaint.getColor());
+                mDrawingTools.add(mCurrentDrawingTool);
                 break;
             case MotionEvent.ACTION_MOVE:
                 action = "ACTION_MOVE";
-                if(mCurrentShape != null) {
-                    mCurrentShape.setFinish(current);
+                if(mCurrentDrawingTool != null) {
+                    mCurrentDrawingTool.setFinish(current);
                     invalidate();
                 }
                 break;
             case MotionEvent.ACTION_UP:
                 action = "ACTION_UP";
-                mCurrentShape = null;
+                mCurrentDrawingTool = null;
+                invalidate();
                 break;
             case MotionEvent.ACTION_CANCEL:
                 action = "ACTION_CANCEL";
-                mCurrentShape = null;
+                mCurrentDrawingTool = null;
                 break;
         }
 
+        Log.i(TAG, action + " at " + current.x + ", " + current.y);
+
         return true;
+    }
+
+    public void fill() {
+        Log.i(TAG, "should fill");
+        mDrawingTools.add(DrawingToolFactory.makeShape(DrawingToolFactory.DrawingToolType.FILL,
+                null, mPaint.getColor()));
+        invalidate();
+    }
+
+    public void erase() {
+        Log.i(TAG, "should erase");
+        mDrawingTools.add(DrawingToolFactory.makeShape(DrawingToolFactory.DrawingToolType.FILL,
+                null, mCanvas.getColor()));
+        invalidate();
+    }
+
+    public boolean undo() {
+        boolean undid = false;
+        int size = mDrawingTools.size();
+        if(size > 0) {
+            mDrawingTools.remove(size-1);
+            invalidate();
+            undid = true;
+        }
+        return undid;
+    }
+
+    public void setPaintColor(int color) {
+        mPaint.setColor(color);
+    }
+
+    public void setSurfaceColor(int color) {
+        mCanvas.setColor(color);
+    }
+
+    public void setCurrentDrawingTool(DrawingToolFactory.DrawingToolType drawingTool) {
+        mCurrentType = drawingTool;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawPaint(mCanvas);
-        for(Shape shape : mShapes) {
-            shape.draw(canvas, mPaint);
+        for(DrawingTool drawingTool : mDrawingTools) {
+            drawingTool.draw(canvas, mPaint);
         }
     }
 }
