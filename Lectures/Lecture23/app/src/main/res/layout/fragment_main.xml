@@ -8,6 +8,12 @@
     tools:context="mobappdev.lecture23.MainFragment">
 
     <Button
+        android:id="@+id/button_whisper_shout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/whisper_or_shout"/>
+
+    <Button
         android:id="@+id/button_ordered_receivers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -17,6 +17,6 @@ public class ShoutReceiver extends BroadcastReceiver {
         String eavesdropping = intent.getStringExtra(EXTRA_SHOUT);
         String shout = context.getResources().getString(R.string.shout);
         Prefs.addEavesdropping(context, String.format(shout, eavesdropping));
-        Log.i(TAG, "Overheard some juicy gossip: " + eavesdropping);
+        Log.i(TAG, "Overheard shouted gossip: " + eavesdropping);
     }
 }

@@ -17,6 +17,6 @@ public class WhisperReceiver extends BroadcastReceiver {
         String eavesdropping = intent.getStringExtra(EXTRA_WHISPER);
         String whisper = context.getResources().getString(R.string.whisper);
         Prefs.addEavesdropping(context, String.format(whisper, eavesdropping));
-        Log.i(TAG, "Overheard some juicy gossip: " + eavesdropping);
+        Log.i(TAG, "Overheard whispered gossip: " + eavesdropping);
     }
 }

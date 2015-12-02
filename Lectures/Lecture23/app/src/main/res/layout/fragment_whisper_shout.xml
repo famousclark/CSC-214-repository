@@ -1,0 +1,59 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mobappdev.lecture23.whispershout.WhisperShoutFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/et_shout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/shout_something"
+            android:gravity="center"
+            />
+
+        <Button
+            android:id="@+id/button_shout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/shout"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/et_whisper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/whisper_something"
+            android:gravity="center"
+            />
+
+        <Button
+            android:id="@+id/button_whisper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/whisper"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -15,23 +15,24 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-    </application>
 
-    <receiver
-        android:name=".ShoutReceiver"
-        android:enabled="true"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="mobappdev.lecture23.action.SHOUT"/>
-        </intent-filter>
-    </receiver>
-    <receiver
-        android:name=".WhisperReceiver"
-        android:enabled="true"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="mobappdev.lecture23.action.WHISPER"/>
-        </intent-filter>
-    </receiver>
+        <receiver
+            android:name=".ShoutReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="mobappdev.lecture23.action.SHOUT"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".WhisperReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="mobappdev.lecture23.action.WHISPER"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
 
 </manifest>

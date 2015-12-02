@@ -19,6 +19,7 @@ import java.util.Set;
  */
 public class SpyFragment extends Fragment {
 
+    private EavesdroppingAdapter mAdapter;
 
     public SpyFragment() {
         // Required empty public constructor
@@ -37,9 +38,16 @@ public class SpyFragment extends Fragment {
         RecyclerView rvEavesdroppings = (RecyclerView)view.findViewById(R.id.rv_overheard);
         rvEavesdroppings.setLayoutManager(new LinearLayoutManager(getContext()));
         Set<String> eavesdroppings = Prefs.getEavesdroppings(getActivity());
-        rvEavesdroppings.setAdapter(new EavesdroppingAdapter(eavesdroppings));
+        mAdapter = new EavesdroppingAdapter(eavesdroppings);
+        rvEavesdroppings.setAdapter(mAdapter);
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mAdapter.updateEavedroppings(Prefs.getEavesdroppings(getActivity()));
     }
 
     private class EavesdroppingHolder extends RecyclerView.ViewHolder {
@@ -54,10 +62,6 @@ public class SpyFragment extends Fragment {
             mTextView.setText(eavesdropped);
             mTextView.setBackgroundColor(bgColor);
             mTextView.setTextColor(textColor);
-        }
-
-        public void setColors(int bgColor, int textColor) {
-
         }
     }
 
@@ -95,6 +99,12 @@ public class SpyFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mEavesdroppings.size();
+        }
+
+        public void updateEavedroppings(Set<String> eavesdroppings) {
+            mEavesdroppings.clear();
+            mEavesdroppings.addAll(eavesdroppings);
+            notifyDataSetChanged();
         }
     }
 

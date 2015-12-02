@@ -10,4 +10,9 @@
     <string name="no_message_received">No Message Received</string>
     <string name="broadcast_receiver_two">Broadcast Receiver Two</string>
     <string name="ordered_receivers">Ordered Receivers</string>
+    <string name="shout_something">Shout Something</string>
+    <string name="whisper_or_shout">Whisper or Shout</string>
+    <string name="shout">Shout</string>
+    <string name="whisper_something">Whisper Something</string>
+    <string name="whisper">Whisper</string>
 </resources>
