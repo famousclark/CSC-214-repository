@@ -7,8 +7,18 @@ import android.graphics.PointF;
 /**
  * Created by Bobby on 12/2/2015.
  */
-public interface Shape {
-    public void setFinish(PointF finish);
+public abstract class Shape {
+    private final PointF mStart;
 
-    public void draw(Canvas canvas, Paint paint);
+    public Shape(PointF start) {
+        mStart = start;
+    }
+
+    public PointF getStart() {
+        return mStart;
+    }
+
+    public abstract void setFinish(PointF finish);
+
+    public abstract void draw(Canvas canvas, Paint paint);
 }

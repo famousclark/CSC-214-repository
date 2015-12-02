@@ -18,7 +18,7 @@ import mobappdev.lecture23.R;
  * Created by Bobby on 12/1/2015.
  */
 public class Surface extends View {
-    private int mSelectedShape = ShapeFactory.LINE;
+    private int mSelectedShape = ShapeFactory.SQUIGGLE;
     private Shape mCurrentShape;
     private List<Shape> mShapes;
 
