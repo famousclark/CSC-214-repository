@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lecture23 Spy</string>
+    <string name="shout">overhead shout: %1$s</string>
+    <string name="whisper">overhead whisper: %1$s</string>
+</resources>
