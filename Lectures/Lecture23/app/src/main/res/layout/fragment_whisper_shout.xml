@@ -1,24 +1,27 @@
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context="mobappdev.lecture23.whispershout.WhisperShoutFragment">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/et_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:padding="10dp">
+        android:hint="@string/say_something"
+        android:gravity="center"
+        />
 
-        <EditText
-            android:id="@+id/et_shout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/shout_something"
-            android:gravity="center"
-            />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="10dp">
 
         <Button
             android:id="@+id/button_shout"
@@ -26,23 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/shout"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <EditText
-            android:id="@+id/et_whisper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/whisper_something"
-            android:gravity="center"
             />
 
         <Button
@@ -55,5 +41,4 @@
 
     </LinearLayout>
 
-
-</RelativeLayout>
+</LinearLayout>

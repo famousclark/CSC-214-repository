@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,10 +27,10 @@ public class TalkToMyselfFragment extends Fragment {
     private static final String EXTRA_MESSAGE = "mobappdev.lecture23.message";
 
 
-    private ReceiverOne mReceiverOne;
-    private ReceiverTwo mReceiverTwo;
-    private TextView mTvReceiverOne;
-    private TextView mTvReceiverTwo;
+    private BlueReceiver mBlueReceiver;
+    private PinkReceiver mPinkReceiver;
+    private TextView mTvBlue;
+    private TextView mTvPink;
 
     public TalkToMyselfFragment() {
         // Required empty public constructor
@@ -47,8 +46,8 @@ public class TalkToMyselfFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_talk_to_myself, container, false);
 
-        mReceiverOne = new ReceiverOne();
-        mReceiverTwo = new ReceiverTwo();
+        mBlueReceiver = new BlueReceiver();
+        mPinkReceiver = new PinkReceiver();
 
         final EditText etMessage = (EditText)view.findViewById(R.id.edit_text_message);
 
@@ -63,16 +62,16 @@ public class TalkToMyselfFragment extends Fragment {
         });
 
         CheckBox trapBroadcast = (CheckBox)view.findViewById(R.id.checkbox_trap_broadcast);
-        mReceiverOne.shouldTrapIntent(trapBroadcast.isChecked());
+        mBlueReceiver.shouldTrapIntent(trapBroadcast.isChecked());
         trapBroadcast.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                mReceiverOne.shouldTrapIntent(isChecked);
+                mBlueReceiver.shouldTrapIntent(isChecked);
             }
         });
 
-        mTvReceiverOne = (TextView)view.findViewById(R.id.text_view_receiver_one);
-        mTvReceiverTwo = (TextView)view.findViewById(R.id.text_view_receiver_two);
+        mTvBlue = (TextView)view.findViewById(R.id.text_view_receiver_one);
+        mTvPink = (TextView)view.findViewById(R.id.text_view_receiver_two);
 
         return view;
     }
@@ -80,18 +79,18 @@ public class TalkToMyselfFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        getActivity().registerReceiver(mReceiverOne, mReceiverOne.getIntentFilter());
-        getActivity().registerReceiver(mReceiverTwo, mReceiverTwo.getIntentFilter());
+        getActivity().registerReceiver(mBlueReceiver, mBlueReceiver.getIntentFilter());
+        getActivity().registerReceiver(mPinkReceiver, mPinkReceiver.getIntentFilter());
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        getActivity().unregisterReceiver(mReceiverOne);
-        getActivity().unregisterReceiver(mReceiverTwo);
+        getActivity().unregisterReceiver(mBlueReceiver);
+        getActivity().unregisterReceiver(mPinkReceiver);
     }
 
-    private class ReceiverOne extends BroadcastReceiver {
+    private class BlueReceiver extends BroadcastReceiver {
         private boolean mTrap;
 
         public void shouldTrapIntent(boolean trap) {
@@ -108,7 +107,7 @@ public class TalkToMyselfFragment extends Fragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             String message = intent.getStringExtra(EXTRA_MESSAGE);
-            mTvReceiverOne.setText(message);
+            mTvBlue.setText(message);
 
             int resultCode;
             if(mTrap) {
@@ -121,7 +120,7 @@ public class TalkToMyselfFragment extends Fragment {
         }
     }
 
-    private class ReceiverTwo extends BroadcastReceiver {
+    private class PinkReceiver extends BroadcastReceiver {
         public IntentFilter getIntentFilter() {
             IntentFilter filter = new IntentFilter(ACTION_MESSAGE);
             // must be higher than system low priority
@@ -134,7 +133,7 @@ public class TalkToMyselfFragment extends Fragment {
             int resultCode = getResultCode();
             if(resultCode != Activity.RESULT_CANCELED) {
                 String message = intent.getStringExtra(EXTRA_MESSAGE);
-                mTvReceiverTwo.setText(message);
+                mTvPink.setText(message);
             }
         }
     }

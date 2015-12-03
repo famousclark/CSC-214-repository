@@ -43,24 +43,24 @@ public class WhisperShoutFragment extends Fragment {
         mShoutReceiver = new ShoutReceiver();
         mWhisperReceiver = new WhisperReceiver();
 
-        final EditText etShout = (EditText)view.findViewById(R.id.et_shout);
+        final EditText etMessage = (EditText)view.findViewById(R.id.et_message);
         Button shout = (Button)view.findViewById(R.id.button_shout);
         shout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sendBroadcast(ACTION_SHOUT, EXTRA_SHOUT, etMessage.getText().toString());
                 Intent intent = new Intent(ACTION_SHOUT);
-                intent.putExtra(EXTRA_SHOUT, etShout.getText().toString());
+                intent.putExtra(EXTRA_SHOUT, etMessage.getText().toString());
                 getActivity().sendBroadcast(intent);
             }
         });
 
-        final EditText etWhisper = (EditText)view.findViewById(R.id.et_whisper);
         Button whisper = (Button)view.findViewById(R.id.button_whisper);
         whisper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ACTION_WHISPER);
-                intent.putExtra(EXTRA_WHISPER, etWhisper.getText().toString());
+                intent.putExtra(EXTRA_WHISPER, etMessage.getText().toString());
                 getActivity().sendBroadcast(intent, PERMISSION_WHISPER);
             }
         });
@@ -74,5 +74,11 @@ public class WhisperShoutFragment extends Fragment {
         getActivity().registerReceiver(mShoutReceiver, mShoutReceiver.getIntentFilter());
         getActivity().registerReceiver(mWhisperReceiver, mWhisperReceiver.getIntentFilter(),
                 PERMISSION_WHISPER, null);
+    }
+
+    private void sendBroadcast(String action, String key, String message) {
+        Intent intent = new Intent(action);
+        intent.putExtra(key, message);
+        getActivity().sendBroadcast(intent);
     }
 }
