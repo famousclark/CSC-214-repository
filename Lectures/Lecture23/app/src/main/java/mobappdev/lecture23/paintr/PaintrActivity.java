@@ -69,6 +69,7 @@ public class PaintrActivity extends AppCompatActivity implements
     @Override
     public void onDrawingToolSelected(DrawingToolFactory.DrawingToolType tool) {
         Log.i(TAG, "Drawing tool selected: " + tool);
+        mPaintrFragment.setSurfaceDrawingToolType(tool);
     }
 
     @Override
@@ -90,16 +91,19 @@ public class PaintrActivity extends AppCompatActivity implements
     @Override
     public void onFill() {
         Log.i(TAG, "Fill!");
+        mPaintrFragment.fillSurface();
     }
 
     @Override
     public void onErase() {
         Log.i(TAG, "Erase!");
+        mPaintrFragment.eraseSurface();
     }
 
     @Override
     public void onUndo() {
         Log.i(TAG, "Undo!");
+        mPaintrFragment.surfaceUndo();
     }
 
     @Override
@@ -111,5 +115,6 @@ public class PaintrActivity extends AppCompatActivity implements
     @Override
     public void onPaintColorSelected(int color) {
         Log.i(TAG, "Paint color selected: " + color);
+        mPaintrFragment.setSurfacePaintColor(color);
     }
 }

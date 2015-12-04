@@ -41,4 +41,24 @@ public class PaintrFragment extends Fragment {
 
         return view;
     }
+
+    public void setSurfacePaintColor(int color) {
+        mSurface.setPaintColor(color);
+    }
+
+    public void setSurfaceDrawingToolType(DrawingToolFactory.DrawingToolType tool) {
+        mSurface.setCurrentDrawingTool(tool);
+    }
+
+    public void eraseSurface() {
+        mSurface.erase();
+    }
+
+    public void fillSurface() {
+        mSurface.fill();
+    }
+
+    public void surfaceUndo() {
+        mSurface.undo();
+    }
 }
