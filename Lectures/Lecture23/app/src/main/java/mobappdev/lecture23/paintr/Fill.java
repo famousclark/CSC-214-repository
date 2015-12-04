@@ -9,7 +9,7 @@ import android.graphics.PointF;
  */
 public class Fill extends DrawingTool {
     public Fill(int color) {
-        super(new PointF(0,0), color);
+        super(new PointF(0,0), color, 0.0f);
     }
 
     @Override

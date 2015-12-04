@@ -18,14 +18,17 @@ import java.util.List;
  * A simple paint program.
  */
 public class Surface extends View {
+    public static final float DEFAULT_BRUSH_SIZE = 5.0f;
+    public static final float MAXIMUM_BRUSH_SIZE = 180f;
+
     private static final String TAG = "SurfaceLog";
 
     private DrawingToolFactory.DrawingToolType mCurrentType;
     private DrawingTool mCurrentDrawingTool;
     private List<DrawingTool> mDrawingTools;
-
     private Paint mPaint;
     private Paint mCanvas;
+    private float mBrushSize;
 
     public Surface(Context context) {
         super(context);
@@ -40,6 +43,8 @@ public class Surface extends View {
 
         mCanvas = new Paint();
 
+        mBrushSize = DEFAULT_BRUSH_SIZE;
+
         Log.i(TAG, attrs.getAttributeValue(null, "canvasColor"));
         Log.i(TAG, attrs.getAttributeValue(null, "paintColor"));
     }
@@ -51,8 +56,8 @@ public class Surface extends View {
         switch(event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 action = "ACTION_DOWN";
-                mCurrentDrawingTool = DrawingToolFactory.makeShape(mCurrentType, current,
-                        mPaint.getColor());
+                mCurrentDrawingTool = DrawingToolFactory.makeTool(mCurrentType, current,
+                        mPaint.getColor(), mBrushSize);
                 mDrawingTools.add(mCurrentDrawingTool);
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -80,15 +85,15 @@ public class Surface extends View {
 
     public void fill() {
         Log.i(TAG, "should fill");
-        mDrawingTools.add(DrawingToolFactory.makeShape(DrawingToolFactory.DrawingToolType.FILL,
-                null, mPaint.getColor()));
+        mDrawingTools.add(DrawingToolFactory.makeTool(DrawingToolFactory.DrawingToolType.FILL,
+                null, mPaint.getColor(), mBrushSize));
         invalidate();
     }
 
     public void erase() {
         Log.i(TAG, "should erase");
-        mDrawingTools.add(DrawingToolFactory.makeShape(DrawingToolFactory.DrawingToolType.FILL,
-                null, mCanvas.getColor()));
+        mDrawingTools.add(DrawingToolFactory.makeTool(DrawingToolFactory.DrawingToolType.FILL,
+                null, mCanvas.getColor(), mBrushSize));
         invalidate();
     }
 
@@ -103,12 +108,20 @@ public class Surface extends View {
         return undid;
     }
 
-    public void setPaintColor(int color) {
+    public void setPaint(int color) {
         mPaint.setColor(color);
     }
 
-    public int getPaintColor() {
+    public int getPaint() {
         return mPaint.getColor();
+    }
+
+    public void setBrushSize(float brushSize) {
+        mBrushSize = brushSize;
+    }
+
+    public float getBrushSize() {
+        return mBrushSize;
     }
 
     public void setSurfaceColor(int color) {

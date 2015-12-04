@@ -18,20 +18,21 @@ public class DrawingToolFactory {
         FILL
     }
 
-    public static DrawingTool makeShape(@NonNull DrawingToolType type, PointF start, int color) {
+    public static DrawingTool makeTool(@NonNull DrawingToolType type, PointF start, int color,
+                                       float brushSize) {
         DrawingTool drawingTool;
         switch(type) {
             case LINE:
                 drawingTool = new Line(start, color);
                 break;
             case SQUIGGLE:
-                drawingTool = new Squiggle(start, color);
+                drawingTool = new Squiggle(start, color, brushSize);
                 break;
             case CIRCLE:
                 drawingTool = new Circle(start, color);
                 break;
             case PAINT_BRUSH:
-                drawingTool = new PaintBrush(start, color);
+                drawingTool = new PaintBrush(start, color, brushSize);
                 break;
             case RECTANGLE:
                 drawingTool = new Rectangle(start, color);

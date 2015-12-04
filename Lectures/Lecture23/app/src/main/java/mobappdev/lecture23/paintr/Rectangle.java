@@ -9,7 +9,7 @@ import android.graphics.PointF;
  */
 public class Rectangle extends DrawingTool {
     public Rectangle(PointF start, int color) {
-        super(start, color);
+        super(start, color, 0.0f);
     }
 
     @Override

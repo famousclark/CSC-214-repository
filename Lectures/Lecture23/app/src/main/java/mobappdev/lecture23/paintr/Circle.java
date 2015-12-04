@@ -9,7 +9,7 @@ import android.graphics.PointF;
  */
 public class Circle extends DrawingTool {
     public Circle(PointF start, int color) {
-        super(start, color);
+        super(start, color, 0.0f);
     }
 
     @Override

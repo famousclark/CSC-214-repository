@@ -11,17 +11,10 @@ import java.util.List;
  * Created by Bobby on 12/2/2015.
  */
 public class Squiggle extends DrawingTool {
-    public static final float DEFAULT_STROKE_WIDTH = 5.0f;
     private List<PointF> mPoints;
-    private final float mStrokeWidth;
 
-    public Squiggle(PointF start, int color) {
-        this(start, color, DEFAULT_STROKE_WIDTH);
-    }
-
-    public Squiggle(PointF start, int color, float strokeWidth) {
-        super(start, color);
-        mStrokeWidth = strokeWidth;
+    public Squiggle(PointF start, int color, float brushSize) {
+        super(start, color, brushSize);
         mPoints = new ArrayList<>();
         mPoints.add(start);
     }
@@ -40,7 +33,7 @@ public class Squiggle extends DrawingTool {
     public void draw(Canvas canvas, Paint paint) {
         PointF last = mPoints.get(0);
         paint.setColor(getColor());
-        paint.setStrokeWidth(mStrokeWidth);
+        paint.setStrokeWidth(getBrushSize());
 
         for(int i = 1; i< mPoints.size(); i++) {
             PointF current = mPoints.get(i);

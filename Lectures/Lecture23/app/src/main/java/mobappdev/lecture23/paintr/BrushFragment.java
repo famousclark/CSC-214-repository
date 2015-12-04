@@ -58,7 +58,7 @@ public class BrushFragment extends Fragment {
         mBrushView.setPaintColor(paintColor);
 
         mSeekBar = (SeekBar)view.findViewById(R.id.seekbar_brush_size);
-        mSeekBar.setMax(50);
+        mSeekBar.setMax((int)Surface.MAXIMUM_BRUSH_SIZE);
         mSeekBar.setProgress((int)initialBrushSize);
 
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

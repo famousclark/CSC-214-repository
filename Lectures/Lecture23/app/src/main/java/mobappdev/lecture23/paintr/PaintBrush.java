@@ -15,8 +15,8 @@ import java.util.List;
 public class PaintBrush extends Squiggle {
     private List<PointF> mPoints;
 
-    public PaintBrush(PointF start, int color) {
-        super(start, color, 30.0f);
+    public PaintBrush(PointF start, int color, float brushSize) {
+        super(start, color, brushSize);
     }
 
     @Override
@@ -24,7 +24,7 @@ public class PaintBrush extends Squiggle {
         super.draw(canvas, paint);
         List<PointF> points = getPoints();
         for(PointF point : points) {
-            canvas.drawCircle(point.x, point.y, 15.0f, paint);
+            canvas.drawCircle(point.x, point.y, getBrushSize()/2, paint);
         }
     }
 }

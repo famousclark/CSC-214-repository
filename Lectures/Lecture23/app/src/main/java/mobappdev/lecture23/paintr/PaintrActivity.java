@@ -2,7 +2,6 @@ package mobappdev.lecture23.paintr;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -39,21 +38,22 @@ public class PaintrActivity extends AppCompatActivity implements
 
         FragmentManager manager = getSupportFragmentManager();
 
-        mBrushFragment = BrushFragment.newInstance(5.0f, getColor(R.color.red));
+        mPaintrFragment = (PaintrFragment)manager.findFragmentById(R.id.fl_paintr);
+        if(mPaintrFragment == null) {
+            mPaintrFragment = PaintrFragment.newInstance();
+            manager.beginTransaction()
+                    .add(R.id.fl_paintr, mPaintrFragment)
+                    .commit();
+        }
+
+        mBrushFragment = BrushFragment.newInstance(Surface.DEFAULT_BRUSH_SIZE,
+                getResources().getColor(R.color.red));
 
         mDrawingToolFragment = (DrawingToolFragment)manager.findFragmentById(R.id.fl_drawing_tools);
         if(mDrawingToolFragment == null) {
             mDrawingToolFragment = DrawingToolFragment.newInstance();
             manager.beginTransaction()
                     .add(R.id.fl_drawing_tools, mDrawingToolFragment)
-                    .commit();
-        }
-
-        mPaintrFragment = (PaintrFragment)manager.findFragmentById(R.id.fl_paintr);
-        if(mPaintrFragment == null) {
-            mPaintrFragment = PaintrFragment.newInstance();
-            manager.beginTransaction()
-                    .add(R.id.fl_paintr, mPaintrFragment)
                     .commit();
         }
 
@@ -110,6 +110,7 @@ public class PaintrActivity extends AppCompatActivity implements
     public void OnBrushSizeSelected(float brushSize) {
         Log.i(TAG, "Brush Size selected: " + brushSize);
         mToolFragmentContainer.setVisibility(View.GONE);
+        mPaintrFragment.setSurfaceBrushSize(brushSize);
     }
 
     @Override

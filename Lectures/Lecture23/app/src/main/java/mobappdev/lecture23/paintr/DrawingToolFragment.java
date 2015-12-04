@@ -61,8 +61,7 @@ public class DrawingToolFragment extends Fragment {
 
         //drawing tools
         addDrawingToolListener(view.findViewById(R.id.iv_line), DrawingToolFactory.DrawingToolType.LINE);
-        addDrawingToolListener(view.findViewById(R.id.iv_squiggle), DrawingToolFactory.DrawingToolType.SQUIGGLE);
-        addDrawingToolListener(view.findViewById(R.id.iv_stroke), DrawingToolFactory.DrawingToolType.PAINT_BRUSH);
+        addDrawingToolListener(view.findViewById(R.id.iv_paint_brush), DrawingToolFactory.DrawingToolType.PAINT_BRUSH);
         addDrawingToolListener(view.findViewById(R.id.iv_circle), DrawingToolFactory.DrawingToolType.CIRCLE);
         addDrawingToolListener(view.findViewById(R.id.iv_rectangle), DrawingToolFactory.DrawingToolType.RECTANGLE);
 

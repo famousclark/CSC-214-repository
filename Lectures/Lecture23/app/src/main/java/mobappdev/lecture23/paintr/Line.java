@@ -10,7 +10,7 @@ import android.graphics.PointF;
 public class Line extends DrawingTool {
 
     public Line(PointF start, int color) {
-        super(start, color);
+        super(start, color, 5.0f);
     }
 
     @Override

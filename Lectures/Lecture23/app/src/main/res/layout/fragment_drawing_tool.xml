@@ -17,18 +17,7 @@
     />
 
     <ImageView
-        android:id="@+id/iv_squiggle"
-        android:contentDescription="@string/pencil"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:src="@drawable/ic_squiggle"
-        android:scaleType="center"
-        android:padding="2dp"
-    />
-
-    <ImageView
-        android:id="@+id/iv_stroke"
+        android:id="@+id/iv_paint_brush"
         android:contentDescription="@string/paint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
