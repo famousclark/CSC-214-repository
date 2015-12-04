@@ -1,0 +1,97 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="mobappdev.lecture23.paintr.DrawingToolFragment">
+
+    <ImageView
+        android:id="@+id/iv_line"
+        android:contentDescription="@string/draw_line"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_line"
+        android:scaleType="center"
+        android:padding="2dp"
+    />
+
+    <ImageView
+        android:id="@+id/iv_squiggle"
+        android:contentDescription="@string/pencil"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_squiggle"
+        android:scaleType="center"
+        android:padding="2dp"
+    />
+
+    <ImageView
+        android:id="@+id/iv_stroke"
+        android:contentDescription="@string/paint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_stroke"
+        android:scaleType="center"
+        android:padding="2dp"
+    />
+
+    <ImageView
+        android:id="@+id/iv_circle"
+        android:contentDescription="@string/draw_circle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_circle"
+        android:scaleType="center"
+        android:padding="2dp"
+    />
+
+    <ImageView
+        android:id="@+id/iv_rectangle"
+        android:contentDescription="@string/draw_rectangle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_rectangle"
+        android:scaleType="center"
+        android:padding="2dp"
+    />
+
+    <ImageView
+        android:id="@+id/iv_fill"
+        android:contentDescription="@string/fill_all"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_fill"
+        android:scaleType="center"
+        android:padding="2dp"
+    />
+
+    <ImageView
+        android:id="@+id/iv_erase_all"
+        android:contentDescription="@string/erase_all"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_trash"
+        android:scaleType="center"
+        android:padding="2dp"
+    />
+
+    <ImageView
+        android:id="@+id/iv_undo"
+        android:contentDescription="@string/undo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_undo"
+        android:scaleType="center"
+        android:padding="2dp"
+    />
+
+</LinearLayout>
+

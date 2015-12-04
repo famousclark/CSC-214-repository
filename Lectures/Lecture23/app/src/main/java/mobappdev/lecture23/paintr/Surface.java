@@ -39,6 +39,9 @@ public class Surface extends View {
         mPaint = new Paint();
 
         mCanvas = new Paint();
+
+        Log.i(TAG, attrs.getAttributeValue(null, "canvasColor"));
+        Log.i(TAG, attrs.getAttributeValue(null, "paintColor"));
     }
 
     @Override
@@ -102,6 +105,10 @@ public class Surface extends View {
 
     public void setPaintColor(int color) {
         mPaint.setColor(color);
+    }
+
+    public int getPaintColor() {
+        return mPaint.getColor();
     }
 
     public void setSurfaceColor(int color) {
