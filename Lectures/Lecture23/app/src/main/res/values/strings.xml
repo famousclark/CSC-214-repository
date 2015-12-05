@@ -24,4 +24,5 @@
     <string name="pencil">PENCIL</string>
     <string name="draw_line">DRAW LINE</string>
     <string name="say_something">Say Something</string>
+    <string name="redo">REDO</string>
 </resources>

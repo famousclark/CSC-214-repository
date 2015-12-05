@@ -66,4 +66,8 @@ public class PaintrFragment extends Fragment {
     public void surfaceUndo() {
         mSurface.undo();
     }
+
+    public void surfaceRedo() {
+        mSurface.redo();
+    }
 }

@@ -82,5 +82,16 @@
         android:padding="2dp"
     />
 
+    <ImageView
+        android:id="@+id/iv_redo"
+        android:contentDescription="@string/redo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_redo"
+        android:scaleType="center"
+        android:padding="2dp"
+    />
+
 </LinearLayout>
 

@@ -26,6 +26,7 @@ public class Surface extends View {
     private DrawingToolFactory.DrawingToolType mCurrentType;
     private DrawingTool mCurrentDrawingTool;
     private List<DrawingTool> mDrawingTools;
+    private List<DrawingTool> mRedoHistory;
     private Paint mPaint;
     private Paint mCanvas;
     private float mBrushSize;
@@ -38,6 +39,7 @@ public class Surface extends View {
         super(context, attrs);
 
         mDrawingTools = new ArrayList<>();
+        mRedoHistory = new ArrayList<>();
 
         mPaint = new Paint();
 
@@ -59,6 +61,7 @@ public class Surface extends View {
                 mCurrentDrawingTool = DrawingToolFactory.makeTool(mCurrentType, current,
                         mPaint.getColor(), mBrushSize);
                 mDrawingTools.add(mCurrentDrawingTool);
+                mRedoHistory.clear();
                 break;
             case MotionEvent.ACTION_MOVE:
                 action = "ACTION_MOVE";
@@ -78,7 +81,7 @@ public class Surface extends View {
                 break;
         }
 
-        Log.i(TAG, action + " at " + current.x + ", " + current.y);
+        //Log.i(TAG, action + " at " + current.x + ", " + current.y);
 
         return true;
     }
@@ -101,11 +104,24 @@ public class Surface extends View {
         boolean undid = false;
         int size = mDrawingTools.size();
         if(size > 0) {
-            mDrawingTools.remove(size-1);
+            DrawingTool tool = mDrawingTools.remove(size-1);
+            mRedoHistory.add(tool);
             invalidate();
             undid = true;
         }
         return undid;
+    }
+    
+    public boolean redo() {
+        boolean redid = false;
+        int size = mRedoHistory.size();
+        if(size > 0) {
+            DrawingTool tool = mRedoHistory.remove(size-1);
+            mDrawingTools.add(tool);
+            invalidate();
+            redid = true;
+        }
+        return redid;
     }
 
     public void setPaint(int color) {

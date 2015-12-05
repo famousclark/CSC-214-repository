@@ -29,6 +29,8 @@ public class DrawingToolFragment extends Fragment {
         public void onErase();
         // called when the undo tool is used
         public void onUndo();
+        // called when the redo tool is used
+        public void onRedo();
     }
 
     private OnDrawingToolInteractionListener mListener;
@@ -86,6 +88,14 @@ public class DrawingToolFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mListener.onUndo();
+            }
+        });
+
+        View redo = view.findViewById(R.id.iv_redo);
+        redo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onRedo();
             }
         });
 

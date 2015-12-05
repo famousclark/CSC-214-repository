@@ -107,6 +107,12 @@ public class PaintrActivity extends AppCompatActivity implements
     }
 
     @Override
+    public void onRedo() {
+        Log.i(TAG, "Redo!");
+        mPaintrFragment.surfaceRedo();
+    }
+
+    @Override
     public void OnBrushSizeSelected(float brushSize) {
         Log.i(TAG, "Brush Size selected: " + brushSize);
         mToolFragmentContainer.setVisibility(View.GONE);
