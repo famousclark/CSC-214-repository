@@ -124,4 +124,10 @@ public class PaintrActivity extends AppCompatActivity implements
         Log.i(TAG, "Paint color selected: " + color);
         mPaintrFragment.setSurfacePaintColor(color);
     }
+
+    @Override
+    public void onPaintColorLongPress(int color) {
+        Log.i(TAG, "Paint color long pressed: " + color);
+        mPaintrFragment.setSurfaceColor(color);
+    }
 }

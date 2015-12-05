@@ -55,6 +55,10 @@ public class PaintrFragment extends Fragment {
         return mSurface.getBrushSize();
     }
 
+    public void setSurfaceColor(int color) {
+        mSurface.setSurfaceColor(color);
+    }
+
     public void eraseSurface() {
         mSurface.erase();
     }

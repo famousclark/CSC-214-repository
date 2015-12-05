@@ -19,6 +19,7 @@ public class PaintColorFragment extends Fragment {
 
     public interface OnPaintColorSelectedListener {
         public void onPaintColorSelected(int color);
+        public void onPaintColorLongPress(int color);
     }
 
     private OnPaintColorSelectedListener mListener;
@@ -72,6 +73,14 @@ public class PaintColorFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mListener.onPaintColorSelected(getResources().getColor(colorId));
+            }
+        });
+
+        swatch.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                mListener.onPaintColorLongPress(getResources().getColor(colorId));
+                return true;
             }
         });
     }

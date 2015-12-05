@@ -142,6 +142,7 @@ public class Surface extends View {
 
     public void setSurfaceColor(int color) {
         mCanvas.setColor(color);
+        invalidate();
     }
 
     public void setCurrentDrawingTool(DrawingToolFactory.DrawingToolType drawingTool) {
