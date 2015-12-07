@@ -1,0 +1,57 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="mobappdev.lecture24.maps.CoordsFragment">
+
+    <LinearLayout
+        android:id="@+id/latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+    >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/latitude"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="6dp"
+        />
+        <EditText
+            android:id="@+id/et_latitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:inputType="text"
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:layout_below="@id/latitude"
+    >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/longitude"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="6dp"
+        />
+        <EditText
+            android:id="@+id/et_longitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:inputType="text"
+        />
+    </LinearLayout>
+</RelativeLayout>

@@ -117,6 +117,7 @@ public class PaintrActivity extends AppCompatActivity implements
         Log.i(TAG, "Brush Size selected: " + brushSize);
         mToolFragmentContainer.setVisibility(View.GONE);
         mPaintrFragment.setSurfaceBrushSize(brushSize);
+        mPaintrFragment.setSurfaceDrawingToolType(DrawingToolFactory.DrawingToolType.PAINT_BRUSH);
     }
 
     @Override
