@@ -6,6 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.SeekBar;
 
 import mobappdev.lecture24.Fragtivity;
@@ -60,6 +63,28 @@ public class MapsActivity extends AppCompatActivity implements
 
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.fragment_maps, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean handled;
+        switch(item.getItemId()) {
+            case R.id.mi_current_location:
+                mMapsFragment.updateToCurrentLocation();
+                handled = true;
+                break;
+            default:
+                handled = super.onOptionsItemSelected(item);
+                break;
+        }
+        return handled;
     }
 
     @Override
