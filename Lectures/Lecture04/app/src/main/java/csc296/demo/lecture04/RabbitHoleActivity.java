@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 public class RabbitHoleActivity extends Activity {
 
+    // the button the user presses to eat cake
     private Button mButtonEatMe;
     private Button mButtonDrinkMe;
 
