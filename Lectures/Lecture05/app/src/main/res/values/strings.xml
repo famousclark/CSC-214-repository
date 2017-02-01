@@ -9,4 +9,9 @@
     <string name="label_balance">Balance</string>
     <string name="label_transactions">Transactions</string>
     <string name="label_transaction_history">Transaction History</string>
+    <string name="button_with_image">Button With Image</string>
+    <string name="right_arrow">Right Arrow</string>
+    <string name="left_arrow">Left Arrow</string>
+    <string name="image_view">Image View</string>
+    <string name="image_button">Image Button</string>
 </resources>

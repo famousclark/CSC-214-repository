@@ -3,20 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_centerHorizontal="true"
-        android:layout_above="@id/image_button_woof"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_drawable"/>
-
     <ImageButton
+        android:contentDescription="@string/image_button"
         android:id="@+id/image_button_woof"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/logo"
         android:layout_centerInParent="true"
         />
+
+    <ImageView
+        android:contentDescription="@string/image_view"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/image_button_woof"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_drawable"/>
 
     <LinearLayout
         android:id="@+id/next_and_previous"
@@ -26,12 +28,14 @@
         android:layout_centerHorizontal="true">
 
         <ImageButton
+            android:contentDescription="@string/left_arrow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/left"/>
 
         <ImageButton
+            android:contentDescription="@string/right_arrow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -44,8 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/next_and_previous"
         android:layout_centerHorizontal="true"
-        android:drawableLeft="@mipmap/woof_launcher"
-        android:text="Button With Image"
+        android:drawableStart="@mipmap/woof_launcher"
+        android:text="@string/button_with_image"
         />
 
 </RelativeLayout>
